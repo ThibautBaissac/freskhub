@@ -1,0 +1,26 @@
+# docker-compose.yml
+version: "3.8"
+include:
+  - .docker/postgres.yml
+
+x-base: &base
+  build:
+    context: .
+    dockerfile: .docker/Dockerfile.dev
+  stdin_open: true
+  tty: true
+
+services:
+  web:
+    <<: *base
+    command: bin/dev
+    restart: on-failure
+    volumes:
+      - .:/app:cached
+    ports:
+      - "3000:3000"
+    depends_on:
+      - postgres
+    environment:
+      DATABASE_URL: postgres://postgres:postgres@postgres/fresks_development
+      RUBY_YJIT_ENABLE: 1
