@@ -4,14 +4,41 @@
 
 @layer base {
   h1 {
-    @apply text-3xl md:text-4xl lg:text-5xl;
+    @apply text-4xl font-bold text-gray-900;
   }
-
   h2 {
-    @apply text-xl md:text-2xl lg:text-3xl;
+    @apply text-3xl font-semibold text-gray-800;
+  }
+  h3 {
+    @apply text-2xl font-medium text-gray-700;
+  }
+  h4 {
+    @apply text-xl font-normal text-gray-600;
+  }
+  h5 {
+    @apply text-lg font-light text-gray-500;
+  }
+  h6 {
+    @text-base font-thin text-gray-400;
+  }
+  p {
+    @apply text-base text-gray-900;
   }
 
-  h3 {
-    @apply text-lg;
+  ul {
+    @apply list-disc pl-5 space-y-2 text-gray-900;
+    li {
+      @apply text-lg;
+    }
+  }
+  ol {
+    @apply list-decimal pl-5 space-y-2 text-gray-900;
+    li {
+        @apply text-lg;
+    }
+  }
+
+  blockquote {
+    @apply border-l-4 border-indigo-500 pl-4 text-xl italic text-gray-900;
   }
 }
