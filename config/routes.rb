@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root to: "components#index"
+  root to: "administration/components#index"
   namespace :administration do
     resources :components
   end
