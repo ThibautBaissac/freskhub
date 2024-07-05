@@ -1,5 +1,7 @@
 class User < ApplicationRecord
   belongs_to :country
+  has_many :user_languages
+  has_many :languages, through: :user_languages
 
   encrypts :email, deterministic: true, downcase: true
 
