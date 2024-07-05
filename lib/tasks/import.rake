@@ -14,4 +14,18 @@ namespace :import do
       )
     end
   end
+
+  task languages: :environment do
+    Language.destroy_all
+    csv_text = File.read("resources/languages.csv")
+    csv = CSV.parse(csv_text, headers: true, col_sep: ";")
+    csv.each do |row|
+      puts "importing row : #{row}"
+      Language.create!(
+        name: row[0],
+        set1_code: row[1].upcase,
+        set2_code: row[2].upcase
+      )
+    end
+  end
 end

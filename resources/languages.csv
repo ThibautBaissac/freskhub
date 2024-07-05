@@ -1,45 +1,184 @@
-﻿code;name
-el-GR;Greek
-en-US;English (United States)
-eo-EO;Esperanto
-es-LAT;Spanish (Latin America)
-et-EE;Estonian
-fa-IR;Persian (Iran)
-fi-FI;Finnish
-ga-IE;Irish
-he-IL;Hebrew
-hi-IN;Hindi
-hu-HU;Hungarian
-hy-AM;Armenian
-id-ID;Indonesian
-it-IT;Italian
-ja-JP;Japanese
-kk-KZ;Kazakh
-km-KH;Khmer
-lt-LT;Lithuanian
-mf-MU;Mauritian Creole
-mk-MK;Macedonian
-ml-IN;Malayalam
-mn-MN;Mongolian
-my-MM;Burmese
-nb-NO;Norwegian Bokmål
-ne-NP;Nepali
-nl-NL;Dutch
-pl-PL;Polish
-pt-BR;Portuguese (Brazil)
-pt-PT;Portuguese (Portugal)
-ro-RO;Romanian
-ru-RU;Russian
-rw-RW;Kinyarwanda
-sk-SK;Slovak
-sl-SI;Slovenian
-sq-AL;Albanian
-sv-SE;Swedish
-swb-YT;Comorian
-th-TH;Thai
-tr-TR;Turkish
-vi-VN;Vietnamese
-zh-CN;Chinese (Simplified)
-zh-HK;Chinese (Hong Kong)
-zh-TPE;Chinese
-zh-TW;Chinese (Traditional, Taiwan)
+name;set1_code;set2_code
+Abkhaze;AB;ABK
+Afar;AA;AAR
+Afrikaans;AF;AFR
+Akan;AK;AKA
+Albanais;SQ;SQI
+Amharique;AM;AMH
+Arabe;AR;ARA
+Aragonais;AN;ARG
+Arménien;HY;HYE
+Assamais;AS;ASM
+Avar;AV;AVA
+Avestique;AE;AVE
+Aymara;AY;AYM
+Azerbaïdjanais;AZ;AZE
+Bambara;BM;BAM
+Bachkir;BA;BAK
+Basque;EU;EUS
+Biélorusse;BE;BEL
+Bengali;BN;BEN
+Bichelamar;BI;BIS
+Bosniaque;BS;BOS
+Breton;BR;BRE
+Bulgare;BG;BUL
+Birman;MY;MYA
+Catalan, Valencien;CA;CAT
+Chamorro;CH;CHA
+Tchétchène;CE;CHE
+Chichewa, Chewa, Nyanja;NY;NYA
+Chinois;ZH;ZHO
+Slavon d'église, vieux slavon, vieux bulgare;CU;CHU
+Tchouvache;CV;CHV
+Cornique;KW;COR
+Corse;CO;COS
+Cree;CR;CRE
+Croate;HR;HRV
+Tchèque;CS;CES
+Danois;DA;DAN
+Divehi, Dhivehi, Maldivien;DV;DIV
+Néerlandais, Flamand;NL;NLD
+Dzongkha;DZ;DZO
+Anglais;EN;ENG
+Espéranto;EO;EPO
+Estonien;ET;EST
+Ewe;EE;EWE
+Féroïen;FO;FAO
+Fidjien;FJ;FIJ
+Finnois;FI;FIN
+Français;FR;FRA
+Frison occidental;FY;FRY
+Peul;FF;FUL
+Gaélique, Gaélique écossais;GD;GLA
+Galicien;GL;GLG
+Ganda;LG;LUG
+Géorgien;KA;KAT
+Allemand;DE;DEU
+Grec moderne;EL;ELL
+Groenlandais, Kalaallisut;KL;KAL
+Guarani;GN;GRN
+Gujarati;GU;GUJ
+Haïtien, Créole haïtien;HT;HAT
+Haoussa;HA;HAU
+Hébreu;HE;HEB
+Herero;HZ;HER
+Hindi;HI;HIN
+Hiri Motu;HO;HMO
+Hongrois;HU;HUN
+Islandais;IS;ISL
+Ido;IO;IDO
+Igbo;IG;IBO
+Indonésien;ID;IND
+Interlingua (Association de Langue Auxiliaire Internationale);IA;INA
+Interlingue, Occidental;IE;ILE
+Inuktitut;IU;IKU
+Inupiaq;IK;IPK
+Irlandais;GA;GLE
+Italien;IT;ITA
+Japonais;JA;JPN
+Javanais;JV;JAV
+Kannada;KN;KAN
+Kanouri;KR;KAU
+Kashmiri;KS;KAS
+Kazakh;KK;KAZ
+Khmer central;KM;KHM
+Kikuyu, Gikuyu;KI;KIK
+Kinyarwanda;RW;KIN
+Kirghiz, Kirghize;KY;KIR
+Komi;KV;KOM
+Kongo;KG;KON
+Coréen;KO;KOR
+Kuanyama, Kwanyama;KJ;KUA
+Kurde;KU;KUR
+Lao;LO;LAO
+Latin;LA;LAT
+Letton;LV;LAV
+Limbourgeois;LI;LIM
+Lingala;LN;LIN
+Lituanien;LT;LIT
+Luba-Katanga;LU;LUB
+Luxembourgeois, Letzeburgesch;LB;LTZ
+Macédonien;MK;MKD
+Malgache;MG;MLG
+Malais;MS;MSA
+Malayalam;ML;MAL
+Maltais;MT;MLT
+Mannois;GV;GLV
+Maori;MI;MRI
+Marathi;MR;MAR
+Marshallais;MH;MAH
+Mongol;MN;MON
+Nauruan;NA;NAU
+Navajo, Navaho;NV;NAV
+Ndebele du Nord;ND;NDE
+Ndebele du Sud;NR;NBL
+Ndonga;NG;NDO
+Népalais;NE;NEP
+Norvégien;NO;NOR
+Norvégien Bokmål;NB;NOB
+Norvégien Nynorsk;NN;NNO
+Occitan;OC;OCI
+Ojibwa;OJ;OJI
+Oriya;OR;ORI
+Oromo;OM;ORM
+Ossète;OS;OSS
+Pali;PI;PLI
+Pachto, Pushto;PS;PUS
+Persan;FA;FAS
+Polonais;PL;POL
+Portugais;PT;POR
+Pendjabi, Panjabi;PA;PAN
+Quechua;QU;QUE
+Roumain, Moldave;RO;RON
+Romanche;RM;ROH
+Kirundi;RN;RUN
+Russe;RU;RUS
+Sami du Nord;SE;SME
+Samoan;SM;SMO
+Sango;SG;SAG
+Sanskrit;SA;SAN
+Sarde;SC;SRD
+Serbe;SR;SRP
+Shona;SN;SNA
+Sindhi;SD;SND
+Singhalais;SI;SIN
+Slovaque;SK;SLK
+Slovène;SL;SLV
+Somali;SO;SOM
+Sotho du Sud;ST;SOT
+Espagnol, Castillan;ES;SPA
+Soundanais;SU;SUN
+Swahili;SW;SWA
+Swati;SS;SSW
+Suédois;SV;SWE
+Tagalog;TL;TGL
+Tahitien;TY;TAH
+Tadjik;TG;TGK
+Tamoul;TA;TAM
+Tatar;TT;TAT
+Télougou;TE;TEL
+Thaï;TH;THA
+Tibétain;BO;BOD
+Tigrigna;TI;TIR
+Tonga (Îles Tonga);TO;TON
+Tsonga;TS;TSO
+Tswana;TN;TSN
+Turc;TR;TUR
+Turkmène;TK;TUK
+Twi;TW;TWI
+Ouïghour;UG;UIG
+Ukrainien;UK;UKR
+Ourdou;UR;URD
+Ouzbek;UZ;UZB
+Venda;VE;VEN
+Vietnamien;VI;VIE
+Volapük;VO;VOL
+Wallon;WA;WLN
+Gallois;CY;CYM
+Wolof;WO;WOL
+Xhosa;XH;XHO
+Yi de Sichuan, Nuosu;II;III
+Yiddish;YI;YID
+Yoruba;YO;YOR
+Zhuang, Chuang;ZA;ZHA
+Zoulou;ZU;ZUL
