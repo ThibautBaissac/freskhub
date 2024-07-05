@@ -10,44 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_06_14_115301) do
-  create_table "documents", force: :cascade do |t|
-    t.string "identifier", null: false
-    t.string "name", null: false
-    t.text "description"
-    t.integer "width", default: 100, null: false
-    t.integer "height", default: 100, null: false
+ActiveRecord::Schema[7.1].define(version: 2024_07_05_085647) do
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "countries", force: :cascade do |t|
+    t.string "name"
+    t.string "alpha2_code"
+    t.string "alpha3_code"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["identifier"], name: "index_documents_on_identifier", unique: true
-    t.index ["name"], name: "index_documents_on_name", unique: true
+    t.index ["alpha2_code"], name: "index_countries_on_alpha2_code", unique: true
+    t.index ["alpha3_code"], name: "index_countries_on_alpha3_code", unique: true
+    t.index ["name"], name: "index_countries_on_name", unique: true
   end
 
-  create_table "languages", force: :cascade do |t|
-    t.string "code", null: false
-    t.string "name", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["code"], name: "index_languages_on_code", unique: true
-    t.index ["name"], name: "index_languages_on_name", unique: true
-  end
-
-  create_table "page_contents", force: :cascade do |t|
-    t.string "content"
-    t.string "tolgee_key", null: false
-    t.integer "x_pos", default: 0, null: false
-    t.integer "y_pos", default: 0, null: false
-    t.integer "width", default: 0, null: false
-    t.integer "height", default: 0, null: false
-    t.integer "document_id", null: false
-    t.integer "language_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["document_id"], name: "index_page_contents_on_document_id"
-    t.index ["language_id"], name: "index_page_contents_on_language_id"
-    t.index ["tolgee_key"], name: "index_page_contents_on_tolgee_key", unique: true
-  end
-
-  add_foreign_key "page_contents", "documents"
-  add_foreign_key "page_contents", "languages"
 end
