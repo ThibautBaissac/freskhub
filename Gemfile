@@ -19,6 +19,7 @@ gem "tzinfo-data", platforms: %i[windows jruby]
 
 group :development, :test do
   gem "byebug"
+  gem "dotenv-rails", "~> 2.7.6"
   gem "factory_bot_rails"
   gem "pry-rails"
   gem "rails-controller-testing"
