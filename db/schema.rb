@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_07_05_092417) do
+ActiveRecord::Schema[7.1].define(version: 2024_07_05_095228) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -36,4 +36,29 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_05_092417) do
     t.index ["set2_code"], name: "index_languages_on_set2_code", unique: true
   end
 
+  create_table "users", force: :cascade do |t|
+    t.string "uuid", null: false
+    t.string "email", null: false
+    t.string "firstname"
+    t.string "lastname"
+    t.text "description"
+    t.string "ui_language", default: "fr", null: false
+    t.datetime "last_login_at"
+    t.float "latitude"
+    t.float "longitude"
+    t.string "address"
+    t.string "city"
+    t.string "state"
+    t.string "postal_code"
+    t.bigint "country_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["country_id"], name: "index_users_on_country_id"
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["firstname"], name: "index_users_on_firstname"
+    t.index ["lastname"], name: "index_users_on_lastname"
+    t.index ["uuid"], name: "index_users_on_uuid", unique: true
+  end
+
+  add_foreign_key "users", "countries"
 end
