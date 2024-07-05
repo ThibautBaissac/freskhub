@@ -17,7 +17,7 @@ RSpec.describe Country, type: :model do
   end
 
   describe "default scope" do
-    pending "orders by name ascending"
+    pending "orders by name ascending fails because database in test environment uses the development database"
     #   let!(:country2) { create(:country, name: "Country 1", alpha2_code: "C1", alpha3_code: "CU1") }
     #   let!(:country1) { create(:country, name: "Country 2", alpha2_code: "C2", alpha3_code: "CU2") }
 

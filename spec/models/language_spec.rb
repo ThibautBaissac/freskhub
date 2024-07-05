@@ -16,7 +16,7 @@ RSpec.describe Language, type: :model do
   end
 
   describe "default scope" do
-    pending "orders by name ascending"
+    pending "orders by name ascending fails because database in test environment uses the development database"
     #   let!(:language2) { create(:language, name: "Language 1", alpha2_code: "C1", alpha3_code: "CU1") }
     #   let!(:language1) { create(:language, name: "Language 2", alpha2_code: "C2", alpha3_code: "CU2") }
 
