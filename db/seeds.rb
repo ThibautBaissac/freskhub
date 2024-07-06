@@ -15,11 +15,14 @@ participant_user = User.create!(email: "participant@test.com", uuid: SecureRando
 facilitator_editor_user = User.create!(email: "facilitator_editor@test.com", uuid: SecureRandom.uuid,
                                        country: Country.first)
 fdc = Fresk.create!(name: "Fresque du climat", identifier: "fdc")
-category = TrainingSession::Category.create(fresk: fdc, identifier: "workshop", format: "online")
-ts = TrainingSession.create!(training_session_category: category, start_at: Time.now, end_at: Time.now + 1.hour,
+category = TrainingSession::Category.create!(fresk: fdc, identifier: "workshop", format: "online")
+ts = TrainingSession.create!(category:, start_at: Time.now, end_at: Time.now + 1.hour,
                              max_participants: 10, uuid: SecureRandom.uuid, language: Language.first, country: Country.first)
 participant = TrainingSession::Participant.create!(training_session: ts, user: participant_user, status: "registered")
 facilitator = TrainingSession::Facilitator.create!(training_session: ts, user: facilitator_editor_user,
                                                    status: "registered")
 TrainingSession::Editor.create!(training_session: ts, user: facilitator_editor_user)
 TrainingSession::Attendance.create!(facilitator:, participant:)
+
+coupon = Billing::Coupon.create!(fresk: fdc, code: "aaa")
+participant.update!(coupon:)

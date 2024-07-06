@@ -10,9 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_07_06_102331) do
+ActiveRecord::Schema[7.1].define(version: 2024_07_06_200656) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "billing_coupons", force: :cascade do |t|
+    t.string "code", null: false
+    t.string "description"
+    t.integer "current_redemption", default: 0, null: false
+    t.integer "max_redemption", default: 1, null: false
+    t.datetime "end_date"
+    t.bigint "fresk_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["code"], name: "index_billing_coupons_on_code", unique: true
+    t.index ["fresk_id"], name: "index_billing_coupons_on_fresk_id"
+  end
 
   create_table "countries", force: :cascade do |t|
     t.string "name"
@@ -79,6 +92,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_06_102331) do
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "coupon_id"
+    t.index ["coupon_id"], name: "index_training_session_roles_on_coupon_id"
     t.index ["training_session_id"], name: "index_training_session_roles_on_training_session_id"
     t.index ["type"], name: "index_training_session_roles_on_type"
     t.index ["user_id"], name: "index_training_session_roles_on_user_id"
@@ -137,11 +152,13 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_06_102331) do
     t.index ["uuid"], name: "index_users_on_uuid", unique: true
   end
 
+  add_foreign_key "billing_coupons", "fresks"
   add_foreign_key "training_session_attendances", "training_session_roles", column: "facilitator_id"
   add_foreign_key "training_session_attendances", "training_session_roles", column: "participant_id"
   add_foreign_key "training_session_categories", "fresks"
   add_foreign_key "training_session_editors", "training_sessions"
   add_foreign_key "training_session_editors", "users"
+  add_foreign_key "training_session_roles", "billing_coupons", column: "coupon_id"
   add_foreign_key "training_session_roles", "training_sessions"
   add_foreign_key "training_session_roles", "users"
   add_foreign_key "training_sessions", "countries"
