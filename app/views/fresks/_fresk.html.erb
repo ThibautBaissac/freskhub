@@ -1,0 +1,11 @@
+<%= link_to(fresk) do %>
+  <div class="flex flex-col items-center mb-3 bg-white border border-gray-200 rounded-2xl md:flex-row hover:bg-gray-100 p-2">
+    <%= safe_image_tag("fresks/#{fresk.identifier}.png", class: "object-contain w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-s-2xl", alt: "") %>
+    <div class="flex flex-col justify-between p-4 leading-normal">
+        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900"><%= fresk.name %></h5>
+        <p class="mb-3 font-normal text-gray-700">
+          La Fresque du Climat permet à chacun·e de comprendre le fonctionnement, l’ampleur et la complexité des enjeux liés aux dérèglements climatiques.
+        </p>
+    </div>
+  </div>
+<% end %>
