@@ -12,6 +12,8 @@ class TrainingSession < ApplicationRecord
 
   has_many :session_products, class_name: "Billing::SessionProduct", foreign_key: "training_session_id"
   has_many :products, class_name: "Billing::Product", through: :session_products
+  has_many :orders, through: :participants, source: :orders
+  has_many :coupons, through: :participants
 
   validates :uuid, presence: true, uniqueness: true
   validates :start_at, :end_at, presence: true

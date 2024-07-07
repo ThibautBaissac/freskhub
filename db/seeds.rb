@@ -1,14 +1,15 @@
 TrainingSession::Attendance.destroy_all
-TrainingSession::Participant.destroy_all
-TrainingSession::Facilitator.destroy_all
 TrainingSession::Editor.destroy_all
-User.destroy_all
-TrainingSession.destroy_all
+TrainingSession::Facilitator.destroy_all
+TrainingSession::Participant.destroy_all
+Billing::Order.destroy_all
 Billing::SessionProduct.destroy_all
 Billing::Product.destroy_all
 Billing::Coupon.destroy_all
+TrainingSession.destroy_all
 TrainingSession::Category.destroy_all
 Fresk.destroy_all
+User.destroy_all
 Language.destroy_all
 Country.destroy_all
 
@@ -37,3 +38,5 @@ participant.update!(coupon:)
 product = Billing::Product.create!(name: "produit 1", tax_rate: 20, after_tax_price_cents: 1200, tax_cents: 200,
                                    before_tax_price_cents: 1000, fresk: fdc, country: Country.first, category:)
 Billing::SessionProduct.create!(training_session: ts, product:)
+Billing::Order.create!(product:, participant:, tax_rate: 20,
+                       after_tax_price_cents: 1200, tax_cents: 200, before_tax_price_cents: 1000, currency: "EUR", status: "paid")

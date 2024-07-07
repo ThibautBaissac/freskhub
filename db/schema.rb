@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_07_07_061622) do
+ActiveRecord::Schema[7.1].define(version: 2024_07_07_065640) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -25,6 +25,21 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_07_061622) do
     t.datetime "updated_at", null: false
     t.index ["code"], name: "index_billing_coupons_on_code", unique: true
     t.index ["fresk_id"], name: "index_billing_coupons_on_fresk_id"
+  end
+
+  create_table "billing_orders", force: :cascade do |t|
+    t.integer "tax_rate", null: false
+    t.integer "after_tax_price_cents", null: false
+    t.integer "tax_cents", null: false
+    t.integer "before_tax_price_cents", null: false
+    t.string "currency", null: false
+    t.string "status", null: false
+    t.bigint "billing_product_id", null: false
+    t.bigint "participant_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["billing_product_id"], name: "index_billing_orders_on_billing_product_id"
+    t.index ["participant_id"], name: "index_billing_orders_on_participant_id"
   end
 
   create_table "billing_products", force: :cascade do |t|
@@ -181,6 +196,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_07_061622) do
   end
 
   add_foreign_key "billing_coupons", "fresks"
+  add_foreign_key "billing_orders", "billing_products"
+  add_foreign_key "billing_orders", "training_session_roles", column: "participant_id"
   add_foreign_key "billing_products", "countries"
   add_foreign_key "billing_products", "fresks"
   add_foreign_key "billing_products", "training_session_categories"
