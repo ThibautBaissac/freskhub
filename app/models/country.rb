@@ -5,4 +5,5 @@ class Country < ApplicationRecord
   default_scope { order(name: :asc) }
 
   has_many :users, dependent: :restrict_with_exception
+  has_many :products, class_name: "Billing::Product", dependent: :restrict_with_exception
 end

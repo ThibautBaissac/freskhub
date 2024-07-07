@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_07_06_200656) do
+ActiveRecord::Schema[7.1].define(version: 2024_07_06_211409) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -25,6 +25,24 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_06_200656) do
     t.datetime "updated_at", null: false
     t.index ["code"], name: "index_billing_coupons_on_code", unique: true
     t.index ["fresk_id"], name: "index_billing_coupons_on_fresk_id"
+  end
+
+  create_table "billing_products", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "description"
+    t.integer "tax_rate", null: false
+    t.integer "after_tax_price_cents", null: false
+    t.integer "tax_cents", null: false
+    t.integer "before_tax_price_cents", null: false
+    t.string "currency", default: "EUR", null: false
+    t.bigint "country_id", null: false
+    t.bigint "fresk_id", null: false
+    t.bigint "training_session_category_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["country_id"], name: "index_billing_products_on_country_id"
+    t.index ["fresk_id"], name: "index_billing_products_on_fresk_id"
+    t.index ["training_session_category_id"], name: "index_billing_products_on_training_session_category_id"
   end
 
   create_table "countries", force: :cascade do |t|
@@ -153,6 +171,9 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_06_200656) do
   end
 
   add_foreign_key "billing_coupons", "fresks"
+  add_foreign_key "billing_products", "countries"
+  add_foreign_key "billing_products", "fresks"
+  add_foreign_key "billing_products", "training_session_categories"
   add_foreign_key "training_session_attendances", "training_session_roles", column: "facilitator_id"
   add_foreign_key "training_session_attendances", "training_session_roles", column: "participant_id"
   add_foreign_key "training_session_categories", "fresks"
