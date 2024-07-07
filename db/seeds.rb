@@ -22,6 +22,8 @@ facilitator_editor_user = User.create!(email: "facilitator_editor@test.com", uui
                                        country: Country.first)
 fdc = Fresk.create!(name: "Fresque du climat", identifier: "fdc")
 facilitator_editor_user.user_infos.create!(fresk: fdc)
+facilitator_editor_user.user_infos.first.user_roles.create!(name: "facilitator")
+facilitator_editor_user.user_infos.first.user_roles.create!(name: "admin")
 
 category = TrainingSession::Category.create!(fresk: fdc, identifier: "workshop", format: "online")
 

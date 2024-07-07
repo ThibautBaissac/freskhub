@@ -3,7 +3,7 @@ class User < ApplicationRecord
   has_many :user_languages
   has_many :languages, through: :user_languages
 
-  has_many :roles, class_name: "TrainingSession::Role", foreign_key: "user_id"
+  has_many :session_roles, class_name: "TrainingSession::Role", foreign_key: "user_id"
   has_many :editor_roles, class_name: "TrainingSession::Editor", foreign_key: "user_id"
   has_many :facilitator_roles, class_name: "TrainingSession::Facilitator", foreign_key: "user_id"
   has_many :participant_roles, class_name: "TrainingSession::Participant", foreign_key: "user_id"
@@ -13,6 +13,7 @@ class User < ApplicationRecord
 
   has_many :user_infos, class_name: "User::Info"
   has_many :fresks, through: :user_infos
+  has_many :user_roles, through: :user_infos
 
   encrypts :email, deterministic: true, downcase: true
 
