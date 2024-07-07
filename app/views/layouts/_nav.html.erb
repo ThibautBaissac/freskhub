@@ -1,8 +1,11 @@
 <nav class="bg-white rounded-2xl px-4 py-2 flex items-center w-full max-w-6xl mt-3">
-  <div class="flex-grow">
-    <h1 class="text-lg font-semibold">FreskHub</h1>
-    <p class="text-gray-500">Welcome Thibaut</p>
-  </div>
+  <%= link_to(root_path, class: "flex flex-grow") do %>
+    <%= safe_image_tag("logo.png", class: "h-14 w-14 mr-2", alt: "") %>
+    <div>
+      <h1 class="text-lg font-semibold">FreskHub</h1>
+      <p class="text-gray-500 text-sm">Raising Awareness</p>
+    </div>
+  <% end %>
   <div class="flex items-center space-x-4">
     <input
       class="block w-full min-w-[70px] py-2 p-4 border border-solid placeholder:text-secondary-dark border-stone-200 rounded-2xl"
