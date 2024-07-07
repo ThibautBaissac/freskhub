@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_07_07_065640) do
+ActiveRecord::Schema[7.1].define(version: 2024_07_07_084350) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -162,6 +162,15 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_07_065640) do
     t.index ["uuid"], name: "index_training_sessions_on_uuid", unique: true
   end
 
+  create_table "user_infos", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "fresk_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["fresk_id"], name: "index_user_infos_on_fresk_id"
+    t.index ["user_id"], name: "index_user_infos_on_user_id"
+  end
+
   create_table "user_languages", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "language_id", null: false
@@ -214,6 +223,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_07_065640) do
   add_foreign_key "training_sessions", "countries"
   add_foreign_key "training_sessions", "languages"
   add_foreign_key "training_sessions", "training_session_categories"
+  add_foreign_key "user_infos", "fresks"
+  add_foreign_key "user_infos", "users"
   add_foreign_key "user_languages", "languages"
   add_foreign_key "user_languages", "users"
   add_foreign_key "users", "countries"

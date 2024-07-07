@@ -1,13 +1,14 @@
+Billing::Order.destroy_all
 TrainingSession::Attendance.destroy_all
 TrainingSession::Editor.destroy_all
 TrainingSession::Facilitator.destroy_all
 TrainingSession::Participant.destroy_all
-Billing::Order.destroy_all
 Billing::SessionProduct.destroy_all
 Billing::Product.destroy_all
 Billing::Coupon.destroy_all
 TrainingSession.destroy_all
 TrainingSession::Category.destroy_all
+User::Info.destroy_all
 Fresk.destroy_all
 User.destroy_all
 Language.destroy_all
@@ -20,6 +21,7 @@ participant_user = User.create!(email: "participant@test.com", uuid: SecureRando
 facilitator_editor_user = User.create!(email: "facilitator_editor@test.com", uuid: SecureRandom.uuid,
                                        country: Country.first)
 fdc = Fresk.create!(name: "Fresque du climat", identifier: "fdc")
+facilitator_editor_user.user_infos.create!(fresk: fdc)
 
 category = TrainingSession::Category.create!(fresk: fdc, identifier: "workshop", format: "online")
 

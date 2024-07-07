@@ -11,6 +11,9 @@ class User < ApplicationRecord
   has_many :facilitated_sessions, through: :facilitator_roles, source: :training_session
   has_many :participated_sessions, through: :participant_roles, source: :training_session
 
+  has_many :user_infos, class_name: "User::Info"
+  has_many :fresks, through: :user_infos
+
   encrypts :email, deterministic: true, downcase: true
 
   validates :uuid, presence: true, uniqueness: true
