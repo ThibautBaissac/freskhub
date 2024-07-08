@@ -1,4 +1,6 @@
 class TrainingSession < ApplicationRecord
+  include Decorable
+
   belongs_to :language
   belongs_to :country
   belongs_to :category, class_name: "TrainingSession::Category", foreign_key: "training_session_category_id"
