@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_07_07_084836) do
+ActiveRecord::Schema[7.1].define(version: 2024_07_08_194914) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -160,6 +160,17 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_07_084836) do
     t.index ["language_id"], name: "index_training_sessions_on_language_id"
     t.index ["training_session_category_id"], name: "index_training_sessions_on_training_session_category_id"
     t.index ["uuid"], name: "index_training_sessions_on_uuid", unique: true
+  end
+
+  create_table "translations", force: :cascade do |t|
+    t.string "translatable_type", null: false
+    t.bigint "translatable_id", null: false
+    t.string "language", null: false
+    t.string "content", null: false
+    t.string "field", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["translatable_type", "translatable_id"], name: "index_translations_on_translatable"
   end
 
   create_table "user_infos", force: :cascade do |t|
