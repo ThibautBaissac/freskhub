@@ -3,13 +3,13 @@
     <div class="text-indigo-900 font-semibold mb-1"><%= training_session.fresk.name %></div>
     <div class="flex items-center justify-between mb-2">
       <span class="text-indigo-900 font-bold text-2xl"><%= training_session.category.identifier.capitalize %></span>
-      <span class="text-gray-500 text-sm"><%= training_session.published ? "Published" : "Unpublished" %></span>
+      <span class="text-gray-500 text-sm"><%= t("training_session.#{training_session.published ? 'published' : 'not_published'}") %></span>
 
     </div>
     <div class="text-sm"><%= training_session.datetime_and_location %><br>
     </div>
   </div>
-  <div class="font-medium mb-3">Informations :</div>
+  <div class="font-medium mb-3"><%= t("informations") %></div>
   <ul class="text-sm space-y-3 grow mb-3">
     <li class="flex items-center">
       <svg class="w-3 h-3 fill-emerald-500 mr-3 shrink-0" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
@@ -30,5 +30,5 @@
       <span><%= training_session.country.name %></span>
     </li>
   </ul>
-  <%= link_to("Accéder aux détails", training_session, class: "w-full inline-flex justify-center whitespace-nowrap rounded-lg bg-indigo-600 px-3.5 py-2.5 text-sm font-medium text-white hover:bg-indigo-800 focus-visible:outline-none focus-visible:ring focus-visible:ring-indigo-300 dark:focus-visible:ring-indigo-600 transition-colors duration-150") %>
+  <%= link_to(t(t("access_details")), training_session, class: "w-full inline-flex justify-center whitespace-nowrap rounded-lg bg-indigo-600 px-3.5 py-2.5 text-sm font-medium text-white hover:bg-indigo-800 focus-visible:outline-none focus-visible:ring focus-visible:ring-indigo-300 dark:focus-visible:ring-indigo-600 transition-colors duration-150") %>
 </div>
