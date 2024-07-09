@@ -20,7 +20,7 @@ Country.destroy_all
 participant_user = User.create!(email: "participant@test.com", uuid: SecureRandom.uuid, country: Country.first)
 facilitator_editor_user = User.create!(email: "facilitator_editor@test.com", uuid: SecureRandom.uuid,
                                        country: Country.first)
-fdc = Fresk.create!(name: "Fresque du climat", identifier: "fdc")
+fdc = Fresk.create!(name: "Fresque du climat", identifier: "fdc", url: "https://fresqueduclimat.org/")
 fdc.translations.create!(language: "en", field: "short_description",
                          content: "La Fresque du Climat permet à chacun·e de comprendre le fonctionnement, l’ampleur et la complexité des enjeux liés aux dérèglements climatiques.")
 fdc.translations.create!(language: "en", field: "long_description",

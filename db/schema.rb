@@ -84,6 +84,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_08_194914) do
   create_table "fresks", force: :cascade do |t|
     t.string "name", null: false
     t.string "identifier", null: false
+    t.string "url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
