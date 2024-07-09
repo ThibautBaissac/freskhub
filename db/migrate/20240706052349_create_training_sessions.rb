@@ -1,8 +1,8 @@
 class CreateTrainingSessions < ActiveRecord::Migration[7.1]
   def change
     create_table :training_sessions do |t|
-      t.text :participants_info
-      t.text :facilitators_info
+      t.text :participants_message
+      t.text :facilitators_message
       t.string :uuid, null: false
       t.datetime :start_at, null: false
       t.datetime :end_at, null: false

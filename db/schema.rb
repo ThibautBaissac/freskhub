@@ -143,8 +143,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_08_194914) do
   end
 
   create_table "training_sessions", force: :cascade do |t|
-    t.text "participants_info"
-    t.text "facilitators_info"
+    t.text "participants_message"
+    t.text "facilitators_message"
     t.string "uuid", null: false
     t.datetime "start_at", null: false
     t.datetime "end_at", null: false
