@@ -24,6 +24,9 @@ module FreskHub
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
 
+    I18n.available_locales = [:fr, :en]
+    config.i18n.default_locale = :fr
+
     # lograge
     config.lograge.enabled = true
     config.lograge.custom_options = lambda do |event|

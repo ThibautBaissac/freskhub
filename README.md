@@ -1,4 +1,12 @@
-# README
+# FRESKHUB
+Raising awareness for a sustainable future
+
+
+## RAKE TASKS
+# Sort yaml files in config/locales
+```bash
+rails sort_yaml
+```
 
 ## RUN TESTS
 ```bash
