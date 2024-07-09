@@ -6,7 +6,7 @@ class CreateUsers < ActiveRecord::Migration[7.1]
       t.string :firstname
       t.string :lastname
       t.text :description
-      t.string :ui_language, null: false, default: "fr"
+      t.string :locale, null: false, default: "fr"
       t.datetime :last_login_at
       t.float :latitude
       t.float :longitude

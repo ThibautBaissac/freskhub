@@ -207,7 +207,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_08_194914) do
     t.string "firstname"
     t.string "lastname"
     t.text "description"
-    t.string "ui_language", default: "fr", null: false
+    t.string "locale", default: "fr", null: false
     t.datetime "last_login_at"
     t.float "latitude"
     t.float "longitude"
