@@ -32,6 +32,7 @@ group :development do
   gem "binding_of_caller"
   gem "bullet"
   gem "erb_lint", require: false
+  gem "foreman"
   gem "letter_opener"
   gem "rack-mini-profiler"
   gem "web-console"
