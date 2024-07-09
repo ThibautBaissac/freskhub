@@ -24,7 +24,7 @@ module FreskHub
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
 
-    I18n.available_locales = [:fr, :en]
+    I18n.available_locales = %i[fr en]
     config.i18n.default_locale = :fr
 
     # lograge
@@ -40,6 +40,8 @@ module FreskHub
 
       {params:, ip: event.payload[:ip]}
     end
+
+    config.exceptions_app = routes
 
     config.active_record.encryption.primary_key = ENV["ACTIVE_RECORD_ENCRYPTION_PRIMARY_KEY"]
     config.active_record.encryption.deterministic_key = ENV["ACTIVE_RECORD_ENCRYPTION_DETERMINISTIC_KEY"]

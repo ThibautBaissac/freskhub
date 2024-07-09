@@ -1,0 +1,10 @@
+<div class="space-y-5">
+  <h1><%= t("errors.oops") %></h1>
+  <h3><%= t("errors.error_#{error}") %></h3>
+  <div class="flex justify-around">
+    <button class="px-3 md:px-4 py-1 md:py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-800" onclick="history.back()">
+      <%= t("errors.back") %>
+    </button>
+    <%= link_to(t("errors.homepage"), root_path, class: "px-3 md:px-4 py-1 md:py-2 bg-gray-200 text-dark rounded-lg hover:bg-gray-300") %>
+  </div>
+</div>
