@@ -1,0 +1,22 @@
+<h1 class="mb-10"><%= t("auth.reset_your_password") %></h1>
+
+<%= form_with(model: @user, url: auth_password_reset_path(token: params[:token])) do |form| %>
+  <% if form.object.errors.any? %>
+    <% form.object.errors.full_messages.each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  <% end %>
+
+  <div class="mb-4">
+    <%= form.label :password, class: "block text-gray-700 text-sm font-bold mb-2", for: :password  %>
+    <%= form.password_field :password, class: "appearance-none border rounded-xl w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" %>
+  </div>
+  <div class="mb-4">
+    <%= form.label t("auth.password_confirmation"), class: "block text-gray-700 text-sm font-bold mb-2", for: :password_confirmation  %>
+    <%= form.password_field :password_confirmation, class: "appearance-none border rounded-xl w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" %>
+  </div>
+
+  <div class="mb-4">
+    <%= form.submit t("default.submit"), class: "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-xl focus:outline-none focus:shadow-outline" %>
+  </div>
+<% end %>
