@@ -1,0 +1,4 @@
+<%= turbo_frame_tag dom_id(@user) do %>
+  <%= render "username", user: @user %>
+  <%= render "profile", user: @user %>
+<% end %>

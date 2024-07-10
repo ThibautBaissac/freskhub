@@ -1,0 +1,47 @@
+<%= turbo_frame_tag dom_id(@user) do %>
+  <h1><%= @user.firstname %></h1>
+
+  <%= form_with(model: @user, local: false, class: "space-y-6") do |form| %>
+    <div class="grid grid-cols-8 gap-4">
+        <%= form.label :name, class: "text-lg col-span-2" %>
+        <%= form.text_field :firstname, class: "border p-2 rounded-xl w-full col-span-3" %>
+        <%= form.text_field :lastname, class: "border p-2 rounded-xl w-full col-span-3" %>
+    </div>
+
+    <div class="grid grid-cols-4 gap-4">
+      <%= form.label :email, class: "text-lg col-span-1" %>
+      <%= form.text_field :email, class: "border p-2 rounded-xl w-full col-span-3" %>
+    </div>
+
+    <div class="grid grid-cols-4 gap-4">
+      <%= form.label :description, class: "text-lg col-span-1" %>
+      <%= form.text_area :description, class: "block p-2 w-full text-gray-900 rounded-xl border border-gray-300 col-span-3", placeholder: "Your description..." %>
+    </div>
+
+    <div class="grid grid-cols-4 gap-4">
+      <%= form.label :address, class: "text-lg col-span-1" %>
+      <%= form.text_field :address, class: "border p-2 rounded-xl w-full col-span-3" %>
+    </div>
+
+    <div class="grid grid-cols-4 gap-4">
+      <div class="text-lg col-span-1">
+        <%= form.label :address %>
+      </div>
+      <div class="col-span-3 space-y-6">
+        <div class="grid grid-cols-2 gap-4">
+          <%= form.text_field :city, class: "border p-2 rounded-xl w-full col-span-1", placeholder: "City" %>
+          <%= form.text_field :postal_code, class: "border p-2 rounded-xl w-full col-span-1", placeholder: "Postal code" %>
+        </div>
+        <div class="grid grid-cols-2 gap-4">
+          <%= form.text_field :state, class: "border p-2 rounded-xl w-full col-span-1" %>
+          <%= form.select :country_id, Country.all.map { |c| [c.name, c.id] }, {}, {class: "border p-2 rounded-xl w-full col-span-1"} %>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-4 gap-4">
+      <div class="col-span-1"></div>
+      <%= form.submit "Save", class: "text-lg px-3 md:px-4 py-1 md:py-2 bg-indigo-600 text-white rounded-xl hover:bg-indigo-800 col-span-3" %>
+    </div>
+  <% end %>
+<% end %>
