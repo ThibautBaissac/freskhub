@@ -42,6 +42,10 @@ class User < ApplicationRecord
     password_salt&.last(10)
   end
 
+  def to_param
+    uuid
+  end
+
   private
 
   def last_login_at_cannot_be_in_the_future
