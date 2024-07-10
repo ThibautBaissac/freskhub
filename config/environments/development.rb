@@ -80,4 +80,6 @@ Rails.application.configure do
   config.action_controller.raise_on_missing_callback_actions = true
 
   config.action_mailer.default_url_options = {host: "0.0.0.0", port: 3000}
+
+  config.web_console.allowed_ips = ["0.0.0.0/0"]
 end
