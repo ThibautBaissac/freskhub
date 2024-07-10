@@ -18,6 +18,6 @@ class TrainingSessionsController < ApplicationController
   end
 
   def show
-    @training_session = TrainingSession.find(params[:id])
+    @training_session = TrainingSession.find_by_uuid(params[:id])
   end
 end
