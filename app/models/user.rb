@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  has_secure_password
+
   belongs_to :country
   has_many :user_languages
   has_many :languages, through: :user_languages
@@ -26,6 +28,19 @@ class User < ApplicationRecord
                     format: {with: Constants::Regex::EMAIL, message: "must be a valid email address"}
 
   validate :last_login_at_cannot_be_in_the_future
+
+  # (?=.{12,}) : at least 12 chars
+  # (?=.*\d) : at least 1 number
+  # (?=.*[a-z]) : at least 1 downcase letter
+  # (?=.*[A-Z]) : at least 1 uppercase letter
+  # (?=.*[@:,\-?*_()!#$%^&+=]) : at least 1 of these special chars
+  # validates :password, format: Constants::User::PASSWORD_REGEX, if: proc { |u| u.password.present? }
+  # TODO: Uncomment the line above and remove the line below when the password regex is ready
+  validates :password, length: {minimum: 1}, if: proc { |u| u.password.present? }
+
+  generates_token_for :password_reset, expires_in: 15.minutes do
+    password_salt&.last(10)
+  end
 
   private
 
