@@ -7,8 +7,10 @@ Rails.application.routes.draw do
     draw :auth
     draw :billings
     draw :fresks
+    draw :searches
     draw :training_sessions
     draw :users
+
     match "/404", to: "errors#not_found", via: :all
     match "/500", to: "errors#internal_server_error", via: :all
   end
