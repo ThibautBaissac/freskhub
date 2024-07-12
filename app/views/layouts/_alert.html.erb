@@ -1,35 +1,7 @@
 <% if flash[:alert] %>
-  <div
-    class="flex justify-between bg-red-800 text-red-100 border border-red-900 rounded-2xl py-4 px-6 text-base mb-2">
-    <div>
-      <%= flash[:alert].html_safe %>
-    </div>
-    <div>
-      <a href="" aria-label="close alert">
-        <svg fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
-          class="w-6 h-6">
-          <line x1="18" y1="6" x2="6" y2="18"></line>
-          <line x1="6" y1="6" x2="18" y2="18"></line>
-        </svg>
-      </a>
-    </div>
-  </div>
+  <%= render(AlertComponent.new(type: :danger, message: flash[:alert].html_safe)) %>
 <% end %>
 
 <% if flash[:notice] %>
-  <div
-    class="flex justify-between bg-green-200 text-green-800 border border-green-400 rounded-2xl py-4 px-6 text-base mb-2">
-    <div>
-      <%= flash[:notice].html_safe %>
-    </div>
-    <div>
-      <a href="" aria-label="close alert">
-        <svg fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
-          class="w-6 h-6">
-          <line x1="18" y1="6" x2="6" y2="18"></line>
-          <line x1="6" y1="6" x2="18" y2="18"></line>
-        </svg>
-      </a>
-    </div>
-  </div>
+  <%= render(AlertComponent.new(type: :success, message: flash[:notice].html_safe)) %>
 <% end %>
