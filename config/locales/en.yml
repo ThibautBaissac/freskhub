@@ -152,6 +152,9 @@ en:
       submit: Save %{model}
       update: Update %{model}
   informations: 'Informations:'
+  locales:
+    en: English
+    fr: French
   number:
     currency:
       format:

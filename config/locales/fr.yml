@@ -152,6 +152,9 @@ fr:
       submit: Enregistrer ce(tte) %{model}
       update: Modifier ce(tte) %{model}
   informations: 'Informations :'
+  locales:
+    en: Anglais
+    fr: Français
   number:
     currency:
       format:
