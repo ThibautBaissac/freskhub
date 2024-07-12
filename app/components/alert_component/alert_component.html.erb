@@ -1,0 +1,15 @@
+<div class="flex justify-between <%= bg_color %> <%= text_color %> border <%= border_color %> rounded-2xl py-2 px-4 text-<%= @size %> mb-2">
+  <div>
+    <%= @message %>
+  </div>
+  <% if @closable %>
+    <div>
+      <a href="" aria-label="close alert">
+        <svg fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </a>
+    </div>
+  <% end %>
+</div>
