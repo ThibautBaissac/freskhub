@@ -1,7 +1,10 @@
 <div class="relative inline-block group">
-  <%= render "layouts/nav/icon_button", name: "User" do %>
-    <%= render "layouts/nav/username" %>
-  <% end %>
+  <div class="relative inline-block group">
+    <a href="#" aria-label=User"
+      class="flex items-center justify-center px-0 w-10 md:px-1 md:w-auto h-10 text-base leading-normal text-center align-middle bg-transparent border border-solid shadow-none cursor-pointer rounded-2xl hover:bg-gray-100">
+      <%= render "layouts/nav/username" %>
+    </a>
+  </div>
 
   <div class="hidden group-hover:block absolute bg-gray-100 min-w-[160px] shadow-lg z-10 rounded-2xl right-0">
     <% if user_signed_in? %>
