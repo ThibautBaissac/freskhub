@@ -15,6 +15,19 @@ fr:
           has_one: L'enregistrement car un(e) %{record} dépendant(e) existe
     models:
       user: User
+  common:
+    actions: Actions
+    back: Retour
+    cancel: Annuler
+    confirm: Confirmer
+    create: Créer
+    delete: Supprimer
+    edit: Modifier
+    new: Nouveau
+    save: Enregistrer
+    search: Rechercher
+    show: Voir
+    update: Mettre à jour
   date:
     abbr_day_names:
     - dim
