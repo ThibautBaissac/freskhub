@@ -1,5 +1,8 @@
 <div class="mb-10 space-y-5">
-  <h1 class="flex items-center gap-2"><%= safe_image_tag("fresks/#{@fresk.identifier}.png", width: 50, alt: @fresk.name.to_s) %> <%= @fresk.name %></h1>
+  <h1 class="flex items-center gap-2">
+    <%= render ImageComponent.new(image_path: "fresks/#{@fresk.identifier}.png", options: {width: 50, alt: @fresk.name.to_s}) %>
+    <%= @fresk.name %>
+  </h1>
   <p><%= sanitize(@fresk.short_description(I18n.locale)) %></p>
 
   <% if @fresk.url.present? %>

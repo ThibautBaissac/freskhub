@@ -1,5 +1,5 @@
 <%= link_to(root_path, class: "flex") do %>
-  <%= safe_image_tag("logo.png", class: "h-14 w-14 mr-2", alt: "") %>
+  <%= render ImageComponent.new(image_path: "logo.png", options: {class: "h-14 w-14 mr-2", alt: "Logo"}) %>
   <div>
     <h1 class="text-lg font-semibold">FreskHub</h1>
     <p class="text-gray-500 text-sm">Raising Awareness</p>
