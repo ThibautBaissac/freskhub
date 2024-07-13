@@ -27,9 +27,8 @@ fdc.translations.create!(language: "en", field: "short_description",
 fdc.translations.create!(language: "en", field: "long_description",
                          content: "<div class='grid grid-cols-1 sm:grid-cols-3 gap-4 mb-10'>    <div class='space-y-3'>      <h3>Scientifique</h3>      <h4 class='text-indigo-900'>Le jeu La Fresque du Climat est un outil neutre et objectif.</h4>      <p>Il est fondé sur les données issues des rapports scientifiques du GIEC (Groupe d’experts intergouvernemental sur l’évolution du climat) dont les recommandations orientent les décisions politiques et économiques à l’échelle mondiale.</p>    </div>    <div class='space-y-3'>      <h3>Accessible</h3>      <h4 class='text-indigo-900'>Son approche ludique et pédagogique permet à tous les publics de s’approprier le sujet des changements climatiques.</h4>      <p>Cette approche vise à éviter une descente verticale du savoir. Durant l’atelier, les participant·es relient les liens de cause à effets et intègrent les enjeux climatiques dans leur globalité.</p>      </div>    <div class='space-y-3'>      <h3>Impactant</h3>      <h4 class='text-indigo-900'>Sans culpabiliser et par une compréhension partagée des mécanismes à l’oeuvre, La Fresque engage les individus dans un échange constructif.</h4>      <p>À l’issue de l’atelier, les participant·es sont motivé·es et outillé·es pour agir à leur échelle.</p>    </div>  </div>")
 
-facilitator_editor_user.user_infos.create!(fresk: fdc)
-facilitator_editor_user.user_infos.first.user_roles.create!(name: "facilitator")
-facilitator_editor_user.user_infos.first.user_roles.create!(name: "admin")
+participant_user.user_infos.create!(fresk: fdc, role: User::Info::User)
+facilitator_editor_user.user_infos.create!(fresk: fdc, role: User::Info::Admin, facilitator: true)
 
 category = TrainingSession::Category.create!(fresk: fdc, identifier: "workshop", format: "online")
 

@@ -177,6 +177,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_08_194914) do
   create_table "user_infos", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "fresk_id", null: false
+    t.string "role", default: "USER", null: false
+    t.boolean "facilitator", default: false, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["fresk_id"], name: "index_user_infos_on_fresk_id"
@@ -190,15 +192,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_08_194914) do
     t.datetime "updated_at", null: false
     t.index ["language_id"], name: "index_user_languages_on_language_id"
     t.index ["user_id"], name: "index_user_languages_on_user_id"
-  end
-
-  create_table "user_roles", force: :cascade do |t|
-    t.string "name", null: false
-    t.bigint "user_info_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["name"], name: "index_user_roles_on_name"
-    t.index ["user_info_id"], name: "index_user_roles_on_user_info_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -249,6 +242,5 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_08_194914) do
   add_foreign_key "user_infos", "users"
   add_foreign_key "user_languages", "languages"
   add_foreign_key "user_languages", "users"
-  add_foreign_key "user_roles", "user_infos"
   add_foreign_key "users", "countries"
 end
