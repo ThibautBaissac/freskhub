@@ -15,7 +15,6 @@ class User < ApplicationRecord
 
   has_many :user_infos, class_name: "User::Info"
   has_many :fresks, through: :user_infos
-  has_many :user_roles, through: :user_infos
 
   encrypts :email, deterministic: true, downcase: true
 
