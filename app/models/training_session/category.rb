@@ -5,6 +5,6 @@ class TrainingSession::Category < ApplicationRecord
   has_many :products, class_name: "Billing::Product", foreign_key: "training_session_category_id",
                       dependent: :restrict_with_exception
 
-  validates :identifier, presence: true, uniqueness: true
-  validates :format, presence: true
+  validates :identifier, :format, presence: true
+  validates :identifier, uniqueness: {scope: :fresk_id}
 end
