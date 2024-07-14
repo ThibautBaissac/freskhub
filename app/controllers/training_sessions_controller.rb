@@ -14,7 +14,7 @@ class TrainingSessionsController < ApplicationController
                         end
     training_sessions = training_sessions
                         .order(start_at: :desc)
-                        .includes(:category, :language, :country, category: :fresk)
+                        .includes(:language, :country, category: :fresk)
     @pagy, @training_sessions = pagy(training_sessions)
     @decorated_training_sessions = @training_sessions.map(&:decorate)
   end

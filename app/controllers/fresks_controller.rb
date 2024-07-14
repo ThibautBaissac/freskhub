@@ -9,7 +9,7 @@ class FresksController < ApplicationController
     @fresk = Fresk.find(params[:id]).decorate
     @training_sessions = @fresk.training_sessions
                                .order(start_at: :desc)
-                               .includes(:category, :language, :country, category: :fresk)
+                               .includes(:language, :country, category: :fresk)
                                .map(&:decorate)
   end
 end
