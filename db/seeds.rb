@@ -22,6 +22,7 @@ participant_user = User.create!(email: "participant@test.com", uuid: SecureRando
 facilitator_editor_user = User.create!(email: "facilitator_editor@test.com", uuid: SecureRandom.uuid,
                                        country: Country.first, password: "password")
 fdc = Fresk.create!(name: "Fresque du climat", identifier: "fdc", url: "https://fresqueduclimat.org/")
+fdb = Fresk.create!(name: "Fresque de la biodiversité", identifier: "fdb", url: "https://fresqueduclimat.org/")
 fdc.translations.create!(language: "en", field: "short_description",
                          content: "La Fresque du Climat permet à chacun·e de comprendre le fonctionnement, l’ampleur et la complexité des enjeux liés aux dérèglements climatiques.")
 fdc.translations.create!(language: "en", field: "long_description",
@@ -30,13 +31,19 @@ fdc.translations.create!(language: "en", field: "long_description",
 participant_user.user_infos.create!(fresk: fdc, role: User::Info::User)
 facilitator_editor_user.user_infos.create!(fresk: fdc, role: User::Info::Admin, facilitator: true)
 
-category = TrainingSession::Category.create!(fresk: fdc, identifier: "workshop", format: "online")
+fdc_workshop_category = TrainingSession::Category.create!(fresk: fdc, identifier: "workshop", format: "online")
+fdc_training_category = TrainingSession::Category.create!(fresk: fdc, identifier: "training", format: "online")
+fdb_workshop_category = TrainingSession::Category.create!(fresk: fdb, identifier: "workshop", format: "online")
+fdb_training_category = TrainingSession::Category.create!(fresk: fdb, identifier: "training", format: "online")
+categories = [fdc_workshop_category, fdc_training_category, fdb_workshop_category, fdb_training_category]
 
-ts = TrainingSession.create!(category:, start_at: Time.now, end_at: Time.now + 1.hour,
+ts = TrainingSession.create!(category: categories.sample, start_at: Time.now, end_at: Time.now + 1.hour,
                              max_participants: 10, uuid: SecureRandom.uuid, language: Language.first, country: Country.first)
 
 30.times do
-  TrainingSession.create!(category:, start_at: Time.now, end_at: Time.now + 1.hour,
+  start_at = Time.now + rand(1..10).days
+  end_at = start_at + 3.hours
+  TrainingSession.create!(category: categories.sample, start_at:, end_at:,
                           max_participants: 10, uuid: SecureRandom.uuid, language: Language.first, country: Country.first)
 end
 
@@ -50,7 +57,7 @@ TrainingSession::Attendance.create!(facilitator:, participant:)
 coupon = Billing::Coupon.create!(fresk: fdc, code: "aaa")
 participant.update!(coupon:)
 product = Billing::Product.create!(name: "produit 1", tax_rate: 20, after_tax_price_cents: 1200, tax_cents: 200,
-                                   before_tax_price_cents: 1000, fresk: fdc, country: Country.first, category:)
+                                   before_tax_price_cents: 1000, fresk: fdc, country: Country.first, category: fdc_workshop_category)
 Billing::SessionProduct.create!(training_session: ts, product:)
 Billing::Order.create!(product:, participant:, tax_rate: 20,
                        after_tax_price_cents: 1200, tax_cents: 200, before_tax_price_cents: 1000, currency: "EUR", status: "paid")

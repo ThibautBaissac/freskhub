@@ -116,7 +116,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_08_194914) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["fresk_id"], name: "index_training_session_categories_on_fresk_id"
-    t.index ["identifier"], name: "index_training_session_categories_on_identifier", unique: true
   end
 
   create_table "training_session_editors", force: :cascade do |t|

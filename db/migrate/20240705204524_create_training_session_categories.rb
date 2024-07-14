@@ -7,7 +7,5 @@ class CreateTrainingSessionCategories < ActiveRecord::Migration[7.1]
 
       t.timestamps
     end
-
-    add_index :training_session_categories, :identifier, unique: true
   end
 end
