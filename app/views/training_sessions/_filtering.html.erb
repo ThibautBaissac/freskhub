@@ -1,0 +1,18 @@
+<% if current_user %>
+  <%= render AccordionComponent.new do %>
+    <div class="flex items-center justify-start space-x-2 text-center mb-6">
+      <%= link_to(t("training_session.all_sessions"), training_sessions_path, class: "px-3 py-1 border rounded-full #{'bg-indigo-300' if params[:role].nil?}") %>
+      <%= link_to(t("training_session.role.as_facilitator"), training_sessions_path(role: "as_facilitator"), class: "px-3 py-1 border rounded-full #{'bg-indigo-300' if params[:role] == 'as_facilitator'}") %>
+      <%= link_to(t("training_session.role.as_editor"), training_sessions_path(role: "as_editor"), class: "px-3 py-1 border rounded-full #{'bg-indigo-300' if params[:role] == 'as_editor'}") %>
+      <%= link_to(t("training_session.role.as_participant"), training_sessions_path(role: "as_participant"), class: "px-3 py-1 border rounded-full #{'bg-indigo-300' if params[:role] == 'as_participant'}") %>
+    </div>
+
+    <div class="flex items-center justify-start space-x-2 text-center mb-6">
+      <% Fresk.all.each do |fresk| %>
+        <div class="flex items-center justify-center space-x-2 text-center mb-6">
+          <%= link_to(fresk.name, training_sessions_path(fresk_id: fresk.id), class: "px-3 py-1 border rounded-full #{'bg-indigo-300' if params[:fresk_id] == fresk.id.to_s}") %>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+<% end %>

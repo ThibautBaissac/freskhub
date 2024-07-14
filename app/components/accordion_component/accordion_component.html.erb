@@ -1,0 +1,25 @@
+<div class="accordion">
+  <input type="checkbox" id="accordion-toggle" class="hidden">
+  <label for="accordion-toggle" class="block p-2 text-gray-800 border cursor-pointer">
+    <h4 class="flex items-center">
+      <%= render Svg::SearchComponent.new %>
+      <%= t("common.search_and_filter") %>
+    </h4>
+  </label>
+  <div class="accordion-content overflow-hidden transition-all duration-500 max-h-0">
+    <div class="p-4 border">
+      <%= content %>
+    </div>
+  </div>
+</div>
+
+<style>
+  /* Hide the checkbox */
+  .accordion input:checked ~ .accordion-content {
+    max-height: 500px; /* Adjust as needed */
+  }
+
+  .accordion-content {
+    max-height: 0;
+  }
+</style>
