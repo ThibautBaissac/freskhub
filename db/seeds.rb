@@ -35,6 +35,11 @@ category = TrainingSession::Category.create!(fresk: fdc, identifier: "workshop",
 ts = TrainingSession.create!(category:, start_at: Time.now, end_at: Time.now + 1.hour,
                              max_participants: 10, uuid: SecureRandom.uuid, language: Language.first, country: Country.first)
 
+30.times do
+  TrainingSession.create!(category:, start_at: Time.now, end_at: Time.now + 1.hour,
+                          max_participants: 10, uuid: SecureRandom.uuid, language: Language.first, country: Country.first)
+end
+
 participant = TrainingSession::Participant.create!(training_session: ts,
                                                    user: participant_user, status: "registered")
 facilitator = TrainingSession::Facilitator.create!(training_session: ts, user: facilitator_editor_user,

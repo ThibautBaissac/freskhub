@@ -9,6 +9,9 @@
   </div>
 
   <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-    <%= render @training_sessions %>
+    <% @decorated_training_sessions.each do |training_session| %>
+      <%= render "training_session", training_session: %>
+    <% end %>
   </div>
+  <%= render PaginationComponent.new(pagy: @pagy) %>
 <% end %>
