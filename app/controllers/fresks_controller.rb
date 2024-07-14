@@ -1,4 +1,6 @@
 class FresksController < ApplicationController
+  skip_before_action :authenticate_user!, only: %i[index show]
+
   def index
     @fresks = Fresk.all.order(created_at: :asc).map(&:decorate)
   end
