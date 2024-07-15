@@ -1,0 +1,13 @@
+<div class="mb-2">
+  <% if @applied_filters && @applied_filters.any? %>
+    <div class="space-x-2">
+      <% @applied_filters.each do |key, value| %>
+        <span class="p-1 md:px-2 bg-indigo-500 text-white text-sm rounded-full">
+          <%= key.humanize %> | <%= value.capitalize %>
+        </span>
+      <% end %>
+    </div>
+  <% else %>
+    <p><%= t("search.no_filter_applied") %></p>
+  <% end %>
+</div>

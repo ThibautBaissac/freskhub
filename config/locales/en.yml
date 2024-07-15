@@ -3,6 +3,26 @@ en:
   access_details: Access informations
   activerecord:
     attributes:
+      country:
+        alpha2_code: Alpha2 code
+        alpha3_code: Alpha3 code
+        name: Name
+      fresk:
+        identifier: Identifier
+        name: Name
+        url: URL
+      language:
+        name: Name
+        set1_code: Set1 code
+        set2_code: Set2 code
+      training_session:
+        connexion_url: Connexion URL
+        end_at: End at
+        facilitators_message: Facilitators message
+        max_participants: Max participants
+        participants_message: Participants message
+        published: Published
+        start_at: Start at
       user:
         email: Email
         firstname: Firstname
@@ -14,6 +34,12 @@ en:
           has_many: Cannot delete record because dependent %{record} exist
           has_one: Cannot delete record because a dependent %{record} exists
     models:
+      country: Country
+      fresk: Fresk
+      language: Language
+      training_session: Session
+      training_session_category: Category
+      training_session_role: Role
       user: User
   common:
     actions: Actions
@@ -25,8 +51,6 @@ en:
     edit: Edit
     new: New
     save: Save
-    search: Search
-    search_and_filter: Search and filter
     show: Shiow
     update: Update
   date:
@@ -206,6 +230,10 @@ en:
     precision:
       format:
         delimiter: ''
+  search:
+    no_filter_applied: No filter applied
+    search: Search
+    search_and_filter: Search and filter
   support:
     array:
       last_word_connector: ", and "
@@ -224,6 +252,8 @@ en:
     not_published: Not published
     published: Published
     role:
+      role: Role
+      all: All roles
       as_editor: As editor
       as_facilitator: As facilitator
       as_participant: As participant

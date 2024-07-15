@@ -3,6 +3,26 @@ fr:
   access_details: Accéder aux informations
   activerecord:
     attributes:
+      country:
+        alpha2_code: Code alpha2
+        alpha3_code: Code alpha3
+        name: Nom
+      fresk:
+        identifier: Identifiant
+        name: Nom
+        url: URL
+      language:
+        name: Nom
+        set1_code: Code Set1
+        set2_code: Code Set2
+      training_session:
+        connexion_url: URL de connexion
+        end_at: Fin le
+        facilitators_message: Message aux animateurs
+        max_participants: Nombre maximum de participants
+        participants_message: Message aux participants
+        published: Publiée
+        start_at: Début le
       user:
         email: E-mail
         firstname: Prénom
@@ -14,7 +34,13 @@ fr:
           has_many: L'enregistrement a échoué car des %{record} dépendants existent
           has_one: L'enregistrement car un(e) %{record} dépendant(e) existe
     models:
-      user: User
+      country: Pays
+      fresk: Fresque
+      language: Langue
+      training_session: Session
+      training_session_category: Catégorie
+      training_session_role: Rôle
+      user: Utilisateur·ice
   common:
     actions: Actions
     back: Retour
@@ -25,8 +51,6 @@ fr:
     edit: Modifier
     new: Nouveau
     save: Enregistrer
-    search: Rechercher
-    search_and_filter: Rechercher et filtrer
     show: Voir
     update: Mettre à jour
   date:
@@ -206,6 +230,10 @@ fr:
     precision:
       format:
         delimiter: ''
+  search:
+    no_filter_applied: Aucun filtre appliqué
+    search: Rechercher
+    search_and_filter: Rechercher et filtrer
   support:
     array:
       last_word_connector: " et "
@@ -224,9 +252,8 @@ fr:
     not_published: Non publiée
     published: Publiée
     role:
-      as_editor: En tant qu'éditeur·ice
-      as_facilitator: En tant qu'animateur·ice
-      as_participant: En tant que participant·e
+      role: Rôle
+      all: Tous les rôles
       editor: Editeur·ice
       facilitator: Animateur·ice
       participant: Participant·e
