@@ -3,7 +3,7 @@
   <label for="accordion-toggle" class="block p-2 text-gray-800 border cursor-pointer">
     <h4 class="flex items-center">
       <%= render Svg::SearchComponent.new %>
-      <%= t("common.search_and_filter") %>
+      <%= @title %>
     </h4>
   </label>
   <div class="accordion-content overflow-hidden transition-all duration-500 max-h-0">
