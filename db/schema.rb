@@ -115,6 +115,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_08_194914) do
     t.string "format", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["fresk_id", "identifier"], name: "index_training_session_categories_on_fresk_id_and_identifier", unique: true
     t.index ["fresk_id"], name: "index_training_session_categories_on_fresk_id"
   end
 
