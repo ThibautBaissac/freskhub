@@ -1,15 +1,5 @@
 <%= render "layouts/turbo_dialog" do %>
   <div data-action="turbo:submit-end->dialog#submitEnd">
-    <h2><%= t("common.search") %></h2>
-    <%= form_with(url: searches_results_path, method: :get, data: {turbo: "false"}, class: "space-y-6") do |form| %>
-      <div class="grid grid-cols-8 gap-4">
-          <%= form.label :query, class: "text-lg col-span-2" %>
-          <%= form.text_field :query, class: "border p-2 rounded-xl w-full col-span-3" %>
-      </div>
-      <div class="grid grid-cols-4 gap-4">
-        <div class="col-span-1"></div>
-        <%= form.submit t("common.search"), class: "text-lg px-3 md:px-4 py-1 md:py-2 bg-indigo-600 text-white rounded-xl hover:bg-indigo-800 col-span-3" %>
-      </div>
-    <% end %>
+    <%= render "searches/form" %>
   </div>
 <% end %>
