@@ -24,3 +24,5 @@ Metrics/CyclomaticComplexity:
   Enabled: false
 Layout/SpaceInsideHashLiteralBraces:
   EnforcedStyle: no_space
+Style/ClassAndModuleChildren:
+  Enabled: false
