@@ -2,12 +2,11 @@ class Searches::ResultsController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[index]
 
   def index
-    # if params.key?(:training_session)
     training_sessions = TrainingSession.all.includes(:language, :country, category: :fresk)
-    training_sessions = Search::Filter.new(training_sessions, filter_params, current_user).call
+    training_sessions = Search::TrainingSessionsFilter.new(training_sessions, filter_params, current_user).call
     @pagy, @training_sessions = pagy(training_sessions.order(start_at: :desc))
     @decorated_training_sessions = @training_sessions.map(&:decorate)
-    @applied_filters = SearchPresenter.new(filter_params).applied_filters
+    @applied_filters = Search::AppliedFiltersPresenter.new(filter_params).call
     render "training_sessions/index"
   end
 
