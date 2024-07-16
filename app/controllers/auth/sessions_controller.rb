@@ -11,7 +11,7 @@ class Auth::SessionsController < ApplicationController
       redirect_to root_path, notice: t("auth.logged_in")
     else
       flash[:alert] = t("auth.invalid_credentials")
-      render :new, status: :unprocessable_entity
+      render(:new, status: :unprocessable_entity)
     end
   end
 

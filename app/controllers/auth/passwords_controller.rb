@@ -8,7 +8,7 @@ class Auth::PasswordsController < ApplicationController
     if current_user.update(password_params)
       redirect_to root_path, notice: "Your password has been updated."
     else
-      render :edit, status: :unprocessable_entity
+      render(:edit, status: :unprocessable_entity)
     end
   end
 

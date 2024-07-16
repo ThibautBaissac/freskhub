@@ -24,7 +24,7 @@ class Auth::PasswordResetsController < ApplicationController
     if @user.update(password_params)
       redirect_to new_auth_session_path, notice: t("auth.password_reset_successful")
     else
-      render :edit, status: :unprocessable_entity
+      render(:edit, status: :unprocessable_entity)
     end
   end
 

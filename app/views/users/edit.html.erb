@@ -1,7 +1,7 @@
-<%= render "layouts/turbo_dialog" do %>
+<%= render("layouts/turbo_dialog") do %>
   <div data-action="turbo:submit-end->dialog#submitEnd">
     <%= form_with(model: @user, local: false, class: "space-y-6") do |form| %>
-      <%= render Form::ErrorMessagesComponent.new(object: form.object) %>
+      <%= render(Form::ErrorMessagesComponent.new(object: form.object)) %>
 
       <div class="grid grid-cols-8 gap-4">
           <%= form.label :name, class: "text-lg col-span-2" %>

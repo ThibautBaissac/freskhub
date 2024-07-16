@@ -5,7 +5,7 @@
       <div class="flex justify-end">
         <button class="inline-flex items-center p-2 text-base leading-normal text-center align-middle bg-transparent border border-solid shadow-none cursor-pointer rounded-xl hover:bg-gray-100" data-action="dialog#close">
           <%= t("common.close") %>
-          <%= render Svg::CrossComponent.new %>
+          <%= render(Svg::CrossComponent.new) %>
         </button>
       </div>
       <%= yield %>

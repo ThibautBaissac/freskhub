@@ -10,7 +10,7 @@ class Auth::RegistrationsController < ApplicationController
       login(@user)
       redirect_to root_path, notice: "Thanks for signing up!"
     else
-      render :new, status: :unprocessable_entity
+      render(:new, status: :unprocessable_entity)
     end
   end
 

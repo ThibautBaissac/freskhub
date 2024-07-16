@@ -2,6 +2,6 @@
   <% if current_user && current_user.firstname %>
     <%= current_user.firstname %>
   <% else %>
-    <%= render Svg::UserComponent.new %>
+    <%= render(Svg::UserComponent.new) %>
   <% end %>
 <% end %>

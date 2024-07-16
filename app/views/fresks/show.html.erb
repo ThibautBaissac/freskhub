@@ -1,6 +1,6 @@
 <div class="mb-10 space-y-5">
   <h1 class="flex items-center gap-2">
-    <%= render ImageComponent.new(image_path: "fresks/#{@fresk.identifier}.png", options: {width: 50, alt: @fresk.name.to_s}) %>
+    <%= render(ImageComponent.new(image_path: "fresks/#{@fresk.identifier}.png", options: {width: 50, alt: @fresk.name.to_s})) %>
     <%= @fresk.name %>
   </h1>
   <p><%= sanitize(@fresk.short_description(I18n.locale)) %></p>
@@ -21,7 +21,7 @@
   <h2><%= t("fresk.discover_sessions") %></h2>
   <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-10">
     <% @training_sessions.each do |training_session| %>
-      <%= render "training_sessions/training_session", training_session: %>
+      <%= render("training_sessions/training_session", training_session:) %>
     <% end %>
   </div>
 </div>
