@@ -1,8 +1,8 @@
 <h1 class="mb-10"><%= t("training_session.session_list") %></h1>
 
 <%= turbo_frame_tag "training_sessions_list", data: {turbo_action: :advance} do %>
-  <%= render "training_sessions/active_filters" %>
-  <%= render "training_sessions/search_and_filter" %>
+  <%= render "searches/active_filters" %>
+  <%= render "searches/search_and_filter_accordion" %>
 
   <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-5">
     <% @decorated_training_sessions.each do |training_session| %>
