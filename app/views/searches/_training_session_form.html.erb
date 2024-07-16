@@ -1,32 +1,33 @@
 <%= form_with url: searches_results_path(locale), method: :get, local: true, data: {turbo: "false"}, class: "space-y-4" do |f| %>
+  <%= hidden_field_tag :model, "training_session" %>
   <div class="grid grid-cols-2 gap-4">
     <div>
       <%= f.label :language_id, t("activerecord.models.language"), class: "block text-sm font-medium text-gray-700" %>
-      <%= select_tag("training_session[language_id]", options_for_select(Language.all.map { [_1.name, _1.id] }, params.dig(:training_session, :language_id)),
+      <%= select_tag(:language_id, options_for_select(Language.all.map { [_1.name, _1.id] }, params[:language_id]),
                      multiple: false, class: "border p-2 rounded-xl w-full", prompt: "All languages") %>
     </div>
     <div>
       <%= f.label :country_id, t("activerecord.models.country"), class: "block text-sm font-medium text-gray-700" %>
-      <%= select_tag("training_session[country_id]", options_for_select(Country.all.map { [_1.name, _1.id] }, params.dig(:training_session, :country_id)),
+      <%= select_tag(:country_id, options_for_select(Country.all.map { [_1.name, _1.id] }, params[:country_id]),
                      multiple: false, class: "border p-2 rounded-xl w-full", prompt: "All countries") %>
     </div>
     <div>
       <%= f.label :category_id,  t("activerecord.models.training_session_category"), class: "block text-sm font-medium text-gray-700" %>
-      <%= select_tag("training_session[category_id]", options_for_select(TrainingSession::Category.all.map { [_1.identifier, _1.id] }, params.dig(:training_session, :category_id)),
+      <%= select_tag(:category_id, options_for_select(TrainingSession::Category.all.map { [_1.identifier, _1.id] }, params[:category_id]),
                      multiple: false, class: "border p-2 rounded-xl w-full", prompt: "All categories") %>
     </div>
     <div>
       <%= f.label :fresk_id, t("activerecord.models.fresk"), class: "block text-sm font-medium text-gray-700" %>
-      <%= select_tag("training_session[fresk_id]", options_for_select(Fresk.all.map { [_1.name, _1.id] }, params.dig(:training_session, :fresk_id)),
+      <%= select_tag(:fresk_id, options_for_select(Fresk.all.map { [_1.name, _1.id] }, params[:fresk_id]),
                      multiple: false, class: "border p-2 rounded-xl w-full", prompt: "All fresks") %>
     </div>
     <div>
       <%= f.label :start_at, t("activerecord.attributes.training_session.start_at"), class: "block text-sm font-medium text-gray-700" %>
-      <%= f.date_field "training_session[start_at]", value: params.dig(:training_session, :start_at), class: "border p-2 rounded-xl w-full" %>
+      <%= f.date_field :start_at, value: params[:start_at], class: "border p-2 rounded-xl w-full" %>
     </div>
     <div>
       <%= f.label :end_at, t("activerecord.attributes.training_session.end_at"), class: "block text-sm font-medium text-gray-700" %>
-      <%= f.date_field "training_session[end_at]", value:params.dig(:training_session, :end_at), class: "border p-2 rounded-xl w-full" %>
+      <%= f.date_field :end_at, value: params[:end_at], class: "border p-2 rounded-xl w-full" %>
     </div>
   </div>
 
@@ -35,20 +36,20 @@
     <%= f.label :role, t("training_session.role.role"), class: "block text-sm font-medium text-gray-700" %>
     <div class="grid grid-cols-2 md:grid-cols-4 gap-2 mt-2 p-2 border rounded-xl">
       <div>
-        <%= f.radio_button "training_session[role]", "all", checked: (params.dig(:training_session, :role) == "all" || params.dig(:training_session, :role).blank?), class: "peer hidden" %>
-        <label for="training_session[role]_all" class="block cursor-pointer select-none rounded-xl px-2 py-1 text-center peer-checked:bg-indigo-500 peer-checked:text-white"><%= t("training_session.role.all") %></label>
+        <%= f.radio_button :role, "all", checked: params[:role] == "all" || params[:role].blank?, class: "peer hidden" %>
+        <label for="role_all" class="block cursor-pointer select-none rounded-xl px-2 py-1 text-center peer-checked:bg-indigo-500 peer-checked:text-white"><%= t("training_session.role.all") %></label>
       </div>
       <div>
-        <%= f.radio_button "training_session[role]", "editor", checked: params.dig(:training_session, :role) == "editor", class: "peer hidden" %>
-        <label for="training_session[role]_editor" class="block cursor-pointer select-none rounded-xl px-2 py-1 text-center peer-checked:bg-indigo-500 peer-checked:text-white"><%= t("training_session.role.editor") %></label>
+        <%= f.radio_button :role, "editor", checked: params[:role] == "editor", class: "peer hidden" %>
+        <label for="role_editor" class="block cursor-pointer select-none rounded-xl px-2 py-1 text-center peer-checked:bg-indigo-500 peer-checked:text-white"><%= t("training_session.role.editor") %></label>
       </div>
       <div>
-        <%= f.radio_button "training_session[role]", "facilitator", checked: params.dig(:training_session, :role) == "facilitator", class: "peer hidden" %>
-        <label for="training_session[role]_facilitator" class="block cursor-pointer select-none rounded-xl px-2 py-1 text-center peer-checked:bg-indigo-500 peer-checked:text-white"><%= t("training_session.role.facilitator") %></label>
+        <%= f.radio_button :role, "facilitator", checked: params[:role] == "facilitator", class: "peer hidden" %>
+        <label for="role_facilitator" class="block cursor-pointer select-none rounded-xl px-2 py-1 text-center peer-checked:bg-indigo-500 peer-checked:text-white"><%= t("training_session.role.facilitator") %></label>
       </div>
       <div>
-        <%= f.radio_button "training_session[role]", "participant", checked: params.dig(:training_session, :role) == "participant", class: "peer hidden" %>
-        <label for="training_session[role]_participant" class="block cursor-pointer select-none rounded-xl px-2 py-1 text-center peer-checked:bg-indigo-500 peer-checked:text-white"><%= t("training_session.role.participant") %></label>
+        <%= f.radio_button :role, "participant", checked: params[:role] == "participant", class: "peer hidden" %>
+        <label for="role_participant" class="block cursor-pointer select-none rounded-xl px-2 py-1 text-center peer-checked:bg-indigo-500 peer-checked:text-white"><%= t("training_session.role.participant") %></label>
       </div>
     </div>
   </div>

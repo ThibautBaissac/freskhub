@@ -1,11 +1,13 @@
 class Search::TrainingSessionsFilter
-  def initialize(training_sessions, params, user)
-    @training_sessions = training_sessions
-    @params = params
+  def initialize(filter_params:, includes:, user:)
+    @params = filter_params
+    @includes = includes
     @user = user
   end
 
   def call
+    @training_sessions = TrainingSession.all.includes(@includes)
+
     @training_sessions = filter_by_language
     @training_sessions = filter_by_country
     @training_sessions = filter_by_category

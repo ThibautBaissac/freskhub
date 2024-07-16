@@ -5,7 +5,7 @@
   <%= render "searches/search_and_filter_accordion" %>
 
   <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-5">
-    <% @decorated_training_sessions.each do |training_session| %>
+    <% @decorated_records.each do |training_session| %>
       <%= render "training_sessions/training_session", training_session: %>
     <% end %>
   </div>

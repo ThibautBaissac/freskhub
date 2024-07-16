@@ -1,5 +1,5 @@
 class Search::AppliedFiltersPresenter
-  def initialize(filter_params)
+  def initialize(filter_params:)
     @filter_params = filter_params.to_h
   end
 

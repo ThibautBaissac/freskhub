@@ -5,8 +5,8 @@ class TrainingSessionsController < ApplicationController
     training_sessions = TrainingSession.all
                                        .includes(:language, :country, category: :fresk)
                                        .order(start_at: :desc)
-    @pagy, @training_sessions = pagy(training_sessions)
-    @decorated_training_sessions = @training_sessions.map(&:decorate)
+    @pagy, @records = pagy(training_sessions)
+    @decorated_records = @records.map(&:decorate)
   end
 
   def show
