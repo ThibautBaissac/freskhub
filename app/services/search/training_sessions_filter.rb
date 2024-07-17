@@ -1,10 +1,4 @@
-class Search::TrainingSessionsFilter
-  def initialize(filter_params:, includes:, user:)
-    @params = filter_params
-    @includes = includes
-    @user = user
-  end
-
+class Search::TrainingSessionsFilter < Search::BaseFilterService
   def call
     @training_sessions = TrainingSession.all.includes(@includes)
 
