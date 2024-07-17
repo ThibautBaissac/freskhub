@@ -1,4 +1,4 @@
-class Search::CategoryFilter < Search::BaseFilter
+class Search::CategoryFilter < Search::BaseFilterPresenter
   def key
     "category_id"
   end

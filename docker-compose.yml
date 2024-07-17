@@ -24,13 +24,13 @@ services:
       RUBY_YJIT_ENABLE: 1
       RAILS_ENV: development
 
-  test:
-    <<: *base
-    restart: on-failure
-    volumes:
-      - .:/app:cached
-    depends_on:
-      - postgres
-    environment:
-      DATABASE_URL: postgres://postgres:postgres@postgres/fresks_test
-      RAILS_ENV: test
+  # test:
+  #   <<: *base
+  #   restart: on-failure
+  #   volumes:
+  #     - .:/app:cached
+  #   depends_on:
+  #     - postgres
+  #   environment:
+  #     DATABASE_URL: postgres://postgres:postgres@postgres/fresks_test
+  #     RAILS_ENV: test

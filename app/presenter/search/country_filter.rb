@@ -1,4 +1,4 @@
-class Search::CountryFilter < Search::BaseFilter
+class Search::CountryFilter < Search::BaseFilterPresenter
   def key
     "country_id"
   end

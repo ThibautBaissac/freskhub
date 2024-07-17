@@ -1,4 +1,4 @@
-class Search::BaseFilter
+class Search::BaseFilterPresenter
   def apply(filters)
     return {} unless filters[key].present?
 

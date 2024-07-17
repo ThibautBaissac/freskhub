@@ -1,4 +1,4 @@
-class Search::FreskFilter < Search::BaseFilter
+class Search::FreskFilter < Search::BaseFilterPresenter
   def key
     "fresk_id"
   end

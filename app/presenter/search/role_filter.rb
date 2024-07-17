@@ -1,4 +1,4 @@
-class Search::RoleFilter < Search::BaseFilter
+class Search::RoleFilter < Search::BaseFilterPresenter
   def key
     "role"
   end

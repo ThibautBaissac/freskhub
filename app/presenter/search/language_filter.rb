@@ -1,4 +1,4 @@
-class Search::LanguageFilter < Search::BaseFilter
+class Search::LanguageFilter < Search::BaseFilterPresenter
   def key
     "language_id"
   end
