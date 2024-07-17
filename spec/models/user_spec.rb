@@ -8,6 +8,8 @@ RSpec.describe User, type: :model do
   end
 
   describe "validations" do
+    let!(:user) { create(:user) }
+
     it { should validate_presence_of(:uuid) }
     it { should validate_uniqueness_of(:uuid) }
 
@@ -20,8 +22,8 @@ RSpec.describe User, type: :model do
       should_not allow_value("user@.com").for(:email)
     end
 
-    it { should validate_presence_of(:ui_language) }
-    it { should validate_inclusion_of(:ui_language).in_array(%w[fr en]) }
+    it { should validate_presence_of(:locale) }
+    it { should validate_inclusion_of(:locale).in_array(I18n.available_locales.map(&:to_s)) }
 
     it { should validate_presence_of(:country) }
 
