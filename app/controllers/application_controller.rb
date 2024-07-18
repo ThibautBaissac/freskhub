@@ -49,10 +49,6 @@ class ApplicationController < ActionController::Base
     session[:locale] = I18n.locale
   end
 
-  def current_user_locale
-    current_user&.locale
-  end
-
   def url_locale
     params[:locale] if I18n.available_locales.map(&:to_s).include?(params[:locale])
   end
