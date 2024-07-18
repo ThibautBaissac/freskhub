@@ -45,6 +45,7 @@ group :test do
   gem "capybara"
   gem "capybara-screenshot"
   gem "selenium-webdriver"
+  gem "simplecov", require: false
   gem "timecop", "~> 0.9.4"
   gem "webdrivers"
 end
