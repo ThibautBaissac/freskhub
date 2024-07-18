@@ -1,0 +1,7 @@
+<% flash.each do |type, message| %>
+  <% if type == "alert" %>
+    <%= render(FlashComponent.new(type: :danger, message: message.html_safe)) %>
+  <% else %>
+    <%= render(FlashComponent.new(type: :success, message: message.html_safe)) %>
+  <% end %>
+<% end %>

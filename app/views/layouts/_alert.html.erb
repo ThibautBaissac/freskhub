@@ -1,7 +1,0 @@
-<% if flash[:alert] %>
-  <%= render(AlertComponent.new(type: :danger, message: flash[:alert].html_safe)) %>
-<% end %>
-
-<% if flash[:notice] %>
-  <%= render(AlertComponent.new(type: :success, message: flash[:notice].html_safe)) %>
-<% end %>

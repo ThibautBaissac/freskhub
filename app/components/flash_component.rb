@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class AlertComponent < ViewComponent::Base
+class FlashComponent < ViewComponent::Base
   def initialize(message:, type: :primary, size: :md, closable: true)
     @message = message
     @type = type
