@@ -26,3 +26,5 @@ Layout/SpaceInsideHashLiteralBraces:
   EnforcedStyle: no_space
 Style/ClassAndModuleChildren:
   Enabled: false
+Style/MethodCallWithArgsParentheses:
+  Enabled: true
