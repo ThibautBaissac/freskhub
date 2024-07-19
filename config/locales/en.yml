@@ -239,6 +239,8 @@ en:
     precision:
       format:
         delimiter: ''
+  pundit:
+    user_not_authorized: You are not authorized to perform this action.
   search:
     no_filter_applied: No filter applied
     search: Search

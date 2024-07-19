@@ -239,6 +239,8 @@ fr:
     precision:
       format:
         delimiter: ''
+  pundit:
+    user_not_authorized: Vous n'êtes pas autorisé·e à effectuer cette action.
   search:
     no_filter_applied: Aucun filtre appliqué
     search: Rechercher

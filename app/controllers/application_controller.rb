@@ -5,6 +5,8 @@ class ApplicationController < ActionController::Base
   before_action :set_locale
   before_action :authenticate_user!
 
+  rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
+
   private
 
   def authenticate_user!
@@ -55,5 +57,10 @@ class ApplicationController < ActionController::Base
 
   def default_url_options
     {locale: I18n.locale}
+  end
+
+  def user_not_authorized
+    flash[:alert] = t("pundit.user_not_authorized")
+    redirect_to(root_path)
   end
 end
