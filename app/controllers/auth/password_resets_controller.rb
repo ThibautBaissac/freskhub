@@ -11,9 +11,9 @@ class Auth::PasswordResetsController < ApplicationController
         user:, token:
         user.generate_token_for(:password_reset)
       ).password_reset.deliver_later
-      redirect_to new_auth_session_path, notice: t("auth.password_reset_email_sent")
+      redirect_to(new_auth_session_path, notice: t("auth.password_reset_email_sent"))
     else
-      redirect_to new_auth_password_reset_path, alert: t("auth.invalid_credentials")
+      redirect_to(new_auth_password_reset_path, alert: t("auth.invalid_credentials"))
     end
   end
 
@@ -22,7 +22,7 @@ class Auth::PasswordResetsController < ApplicationController
 
   def update
     if @user.update(password_params)
-      redirect_to new_auth_session_path, notice: t("auth.password_reset_successful")
+      redirect_to(new_auth_session_path, notice: t("auth.password_reset_successful"))
     else
       render(:edit, status: :unprocessable_entity)
     end
@@ -32,7 +32,7 @@ class Auth::PasswordResetsController < ApplicationController
 
   def set_user_by_token
     @user = User.find_by_token_for(:password_reset, params[:token])
-    redirect_to new_auth_password_reset_path, alert: t("auth.invalid_token") unless @user
+    redirect_to(new_auth_password_reset_path, alert: t("auth.invalid_token")) unless @user
   end
 
   def password_params

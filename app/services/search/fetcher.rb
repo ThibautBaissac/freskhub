@@ -12,7 +12,7 @@ module Search
       when "TrainingSession"
         Search::TrainingSessionsFilter.new(filter_params: @params, includes: @includes, user: @user).call
       else
-        raise ArgumentError, "Unsupported model type"
+        raise(ArgumentError, "Unsupported model type")
       end
     end
   end

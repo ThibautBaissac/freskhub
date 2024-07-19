@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
   private
 
   def authenticate_user!
-    redirect_to new_auth_session_path, alert: "You must sign in or sign up first!" unless user_signed_in?
+    redirect_to(new_auth_session_path, alert: "You must sign in or sign up first!") unless user_signed_in?
   end
 
   def current_user
@@ -42,7 +42,7 @@ class ApplicationController < ActionController::Base
 
   def set_locale
     if params[:locale] && !I18n.available_locales.map(&:to_s).include?(params[:locale])
-      redirect_to url_for(locale: I18n.default_locale) and return
+      redirect_to(url_for(locale: I18n.default_locale)) and return
     end
 
     I18n.locale = current_user_locale || url_locale || I18n.default_locale

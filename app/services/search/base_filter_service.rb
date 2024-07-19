@@ -6,6 +6,6 @@ class Search::BaseFilterService
   end
 
   def call
-    raise NotImplementedError
+    raise(NotImplementedError)
   end
 end

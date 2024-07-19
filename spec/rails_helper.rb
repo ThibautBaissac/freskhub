@@ -28,10 +28,10 @@ require "simplecov"
 begin
   ActiveRecord::Migration.maintain_test_schema!
 rescue ActiveRecord::PendingMigrationError => e
-  abort e.to_s.strip
+  abort(e.to_s.strip)
 end
 RSpec.configure do |config|
-  config.include FactoryBot::Syntax::Methods
+  config.include(FactoryBot::Syntax::Methods)
 
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   config.fixture_paths = [
@@ -69,7 +69,7 @@ end
 
 Shoulda::Matchers.configure do |config|
   config.integrate do |with|
-    with.test_framework :rspec
-    with.library :rails
+    with.test_framework(:rspec)
+    with.library(:rails)
   end
 end

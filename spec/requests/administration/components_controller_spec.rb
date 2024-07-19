@@ -1,7 +1,7 @@
 require "rails_helper"
 require "support/base_request_helper"
 
-RSpec.describe Administration::ComponentsController, type: :request do
+RSpec.describe(Administration::ComponentsController, type: :request) do
   include BaseRequestHelper
 
   let(:user) { create(:user) }
@@ -13,7 +13,7 @@ RSpec.describe Administration::ComponentsController, type: :request do
 
     it "returns a successful response" do
       get(administration_components_path)
-      expect(response).to have_http_status(:success)
+      expect(response).to(have_http_status(:success))
     end
   end
 end

@@ -19,9 +19,9 @@ task :sort_yaml, [:file_path] => :environment do |_, args|
       sorted_yaml = deep_sort(yaml_content)
       sorted_yaml_string = sorted_yaml.to_yaml(lines_style: :flow)
       File.open(file_path, "w") { |file| file.write(sorted_yaml_string) }
-      puts "YAML file sorted successfully: #{file_path}"
+      puts("YAML file sorted successfully: #{file_path}")
     else
-      puts "File not found: #{file_path}"
+      puts("File not found: #{file_path}")
     end
   end
 

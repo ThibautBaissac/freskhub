@@ -8,14 +8,14 @@ class Search::BaseFilterPresenter
   end
 
   def key
-    raise NotImplementedError
+    raise(NotImplementedError)
   end
 
   def localized_key
-    raise NotImplementedError
+    raise(NotImplementedError)
   end
 
   def find_value(_id)
-    raise NotImplementedError
+    raise(NotImplementedError)
   end
 end

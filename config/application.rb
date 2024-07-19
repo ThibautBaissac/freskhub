@@ -9,7 +9,7 @@ Bundler.require(*Rails.groups)
 module FreskHub
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
-    config.load_defaults 7.1
+    config.load_defaults(7.1)
 
     # Please, add to the `ignore` list any other `lib` subdirectories that do
     # not contain `.rb` files, or that should not be reloaded or eager loaded.
@@ -31,11 +31,11 @@ module FreskHub
     config.lograge.enabled = true
     config.lograge.custom_options = lambda do |event|
       params = event.payload[:params].reject do |k|
-        %w[controller action].include? k
+        %w[controller action].include?(k)
       end
 
       params = params.merge(event.payload[:headers].env.select do |k|
-                              %w[HTTP_X_API_KEY HTTP_AUTHORIZATION].include? k
+                              %w[HTTP_X_API_KEY HTTP_AUTHORIZATION].include?(k)
                             end)
 
       {params:, ip: event.payload[:ip]}

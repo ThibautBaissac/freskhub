@@ -10,7 +10,7 @@ class UsersController < ApplicationController
   def update
     if @user.update(user_params)
       respond_to do |format|
-        format.html { redirect_to user_path(@user.uuid), notice: t("users.update.success") }
+        format.html { redirect_to(user_path(@user.uuid), notice: t("users.update.success")) }
         format.turbo_stream
       end
     else

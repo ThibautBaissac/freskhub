@@ -9,10 +9,10 @@ gem "jsbundling-rails"
 gem "lograge", "~> 0.14.0"
 gem "pagy", "~> 8.6"
 gem "pg", "~> 1.5", ">= 1.5.6"
-gem "puma", ">= 5.0"
-gem "pundit", "~> 2.3", ">= 2.3.1"
 gem "prawn"
 gem "propshaft"
+gem "puma", ">= 5.0"
+gem "pundit", "~> 2.3", ">= 2.3.1"
 gem "rails", "~> 7.1.3", ">= 7.1.3.2"
 gem "stimulus-rails"
 gem "turbo-rails"
@@ -32,7 +32,7 @@ end
 group :development do
   gem "better_errors"
   gem "binding_of_caller"
-  gem 'brakeman', require: false
+  gem "brakeman", require: false
   gem "bullet"
   gem "erb_lint", require: false
   gem "foreman"
