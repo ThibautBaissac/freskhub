@@ -1,8 +1,8 @@
 <h2 class="font-bold">ALERTS</h2>
 <div class="mb-10">
-  <%= render(AlertComponent.new(type: :primary, message: "This is a primary alert!")) %>
-  <%= render(AlertComponent.new(type: :secondary, message: "This is a secondary alert!")) %>
-  <%= render(AlertComponent.new(type: :success, message: "This is a success alert!")) %>
-  <%= render(AlertComponent.new(type: :warning, size: :sm, message: "This is a small warning alert!")) %>
-  <%= render(AlertComponent.new(type: :danger, message: "This is a danger alert that is not closable!", closable: false)) %>
+  <%= render(FlashComponent.new(type: :primary, message: "This is a primary alert!")) %>
+  <%= render(FlashComponent.new(type: :secondary, message: "This is a secondary alert!")) %>
+  <%= render(FlashComponent.new(type: :success, message: "This is a success alert!")) %>
+  <%= render(FlashComponent.new(type: :warning, size: :sm, message: "This is a small warning alert!")) %>
+  <%= render(FlashComponent.new(type: :danger, message: "This is a danger alert that is not closable!", closable: false)) %>
 </div>
