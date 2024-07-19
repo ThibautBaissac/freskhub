@@ -1,3 +1,3 @@
 namespace :administration do
-  resources :components
+  resources :components, only: [:index]
 end
