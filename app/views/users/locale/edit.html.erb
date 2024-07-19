@@ -5,8 +5,8 @@
       <div class="flex items-center justify-around">
         <% I18n.available_locales.each do |locale| %>
           <div class="w-30">
-            <%= form.radio_button :new_locale, locale, id: locale, class: "peer hidden", checked: (current_user.locale == locale.to_s) %>
-            <%= form.label :new_locale, for: locale, class: "block cursor-pointer select-none px-5 py-3 text-center rounded-2xl border border-gray-200 peer-checked:bg-blue-500 peer-checked:text-white" do %>
+            <%= form.radio_button(:new_locale, locale, id: locale, class: "peer hidden", checked: (current_user.locale == locale.to_s)) %>
+            <%= form.label(:new_locale, for: locale, class: "block cursor-pointer select-none px-5 py-3 text-center rounded-2xl border border-gray-200 peer-checked:bg-blue-500 peer-checked:text-white") do %>
               <%= t("locales.#{locale}") %>
               <%= render("users/locale/flag_#{locale}") %>
             <% end %>
@@ -14,7 +14,7 @@
         <% end %>
       </div>
       <div class="mt-10 flex justify-end">
-        <%= form.submit t("common.save"), class: "text-lg px-3 md:px-4 py-1 md:py-2 bg-indigo-600 text-white rounded-xl hover:bg-indigo-800" %>
+        <%= form.submit(t("common.save"), class: "text-lg px-3 md:px-4 py-1 md:py-2 bg-indigo-600 text-white rounded-xl hover:bg-indigo-800") %>
       </div>
     <% end %>
   </div>

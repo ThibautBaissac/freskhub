@@ -4,19 +4,19 @@
   <%= render(Form::ErrorMessagesComponent.new(object: form.object)) %>
 
   <div class="mb-4">
-    <%= form.label :email, class: "block text-gray-700 text-sm font-bold mb-2", for: :email %>
-    <%= form.email_field :email, class: "appearance-none border rounded-xl w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" %>
+    <%= form.label(:email, class: "block text-gray-700 text-sm font-bold mb-2", for: :email) %>
+    <%= form.email_field(:email, class: "appearance-none border rounded-xl w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline") %>
   </div>
   <div class="mb-4">
-    <%= form.label :password, class: "block text-gray-700 text-sm font-bold mb-2", for: :password  %>
-    <%= form.password_field :password, class: "appearance-none border rounded-xl w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" %>
+    <%= form.label(:password, class: "block text-gray-700 text-sm font-bold mb-2", for: :password)  %>
+    <%= form.password_field(:password, class: "appearance-none border rounded-xl w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline") %>
   </div>
   <div class="mb-4">
-    <%= form.label :password_confirmation, class: "block text-gray-700 text-sm font-bold mb-2", for: :password_confirmation  %>
-    <%= form.password_field :password_confirmation, class: "appearance-none border rounded-xl w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" %>
+    <%= form.label(:password_confirmation, class: "block text-gray-700 text-sm font-bold mb-2", for: :password_confirmation)  %>
+    <%= form.password_field(:password_confirmation, class: "appearance-none border rounded-xl w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline") %>
   </div>
 
   <div class="mb-4">
-    <%= form.submit "Sign up", class: "bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded-xl focus:outline-none focus:shadow-outline" %>
+    <%= form.submit("Sign up", class: "bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded-xl focus:outline-none focus:shadow-outline") %>
   </div>
 <% end %>
