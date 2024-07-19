@@ -32,7 +32,7 @@ class TrainingSession < ApplicationRecord
   scope :by_user_as_facilitator, ->(user) { by_user_and_role(user, :facilitator) }
   scope :by_user_as_participant, ->(user) { by_user_and_role(user, :participant) }
   scope :by_user_and_role, lambda { |user, role|
-                             joins("#{role.to_s.pluralize}".to_sym).where("training_session_roles.user_id = ? AND type = ?", user.id, "TrainingSession::#{role.to_s.capitalize}")
+                             joins(role.to_s.pluralize.to_s.to_sym).where("training_session_roles.user_id = ? AND type = ?", user.id, "TrainingSession::#{role.to_s.capitalize}")
                            }
 
   def to_param

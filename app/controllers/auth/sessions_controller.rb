@@ -6,7 +6,7 @@ class Auth::SessionsController < ApplicationController
 
   def create
     # TODO: Use strong parameters
-    if user = User.authenticate_by(email: params[:email], password: params[:password])
+    if (user = User.authenticate_by(email: params[:email], password: params[:password]))
       login(user)
       redirect_to(root_path, notice: t("auth.logged_in"))
     else

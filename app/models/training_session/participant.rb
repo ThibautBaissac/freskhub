@@ -12,6 +12,6 @@ class TrainingSession::Participant < TrainingSession::Role
   private
 
   def anonymous_count_must_be_zero
-    errors.add(:anonymous_count, "must be zero") unless anonymous_count == 0
+    errors.add(:anonymous_count, "must be zero") unless anonymous_count.zero?
   end
 end
