@@ -41,6 +41,15 @@ fr:
       training_session_category: Catégorie
       training_session_role: Rôle
       user: Utilisateur·ice
+  auth:
+    invalid_credentials: Identifiants invalides
+    invalid_token: Jeton invalide, veuillez réessayer
+    logged_in: Vous êtes connecté·e
+    logged_out: Vous êtes déconnecté·e
+    password_reset_email_sent: Un e-mail a été envoyé avec des instructions pour réinitialiser
+      votre mot de passe
+    password_reset_successful: Votre mot de passe a été réinitialisé
+    signed_up: Merci de vous être inscrit·e !
   common:
     actions: Actions
     back: Retour
@@ -252,9 +261,9 @@ fr:
     not_published: Non publiée
     published: Publiée
     role:
-      role: Rôle
       all: Tous les rôles
       editor: Editeur·ice
       facilitator: Animateur·ice
       participant: Participant·e
+      role: Rôle
     session_list: Liste des sessions

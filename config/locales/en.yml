@@ -41,6 +41,15 @@ en:
       training_session_category: Category
       training_session_role: Role
       user: User
+  auth:
+    invalid_credentials: Invalid credentials
+    invalid_token: Invalid token, please try again
+    logged_in: You are logged in
+    logged_out: You are logged out
+    password_reset_email_sent: An email has been sent with instructions to reset your
+      password
+    password_reset_successful: Your password has been reset
+    signed_up: Thanks for signing up!
   common:
     actions: Actions
     back: Back
@@ -252,7 +261,6 @@ en:
     not_published: Not published
     published: Published
     role:
-      role: Role
       all: All roles
       as_editor: As editor
       as_facilitator: As facilitator
@@ -260,4 +268,5 @@ en:
       editor: Editor
       facilitator: Facilitator
       participant: Participant
+      role: Role
     session_list: Sessions list

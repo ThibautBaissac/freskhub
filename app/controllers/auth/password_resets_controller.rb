@@ -32,7 +32,7 @@ class Auth::PasswordResetsController < ApplicationController
 
   def set_user_by_token
     @user = User.find_by_token_for(:password_reset, params[:token])
-    redirect_to new_auth_password_reset_path, alert: "Invalid token, please try again." unless @user
+    redirect_to new_auth_password_reset_path, alert: t("auth.invalid_token") unless @user
   end
 
   def password_params

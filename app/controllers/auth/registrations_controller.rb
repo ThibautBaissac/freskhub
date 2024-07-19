@@ -8,7 +8,7 @@ class Auth::RegistrationsController < ApplicationController
     @user = User.new(registration_params)
     if @user.save
       login(@user)
-      redirect_to root_path, notice: "Thanks for signing up!"
+      redirect_to root_path, notice: t("auth.signed_up")
     else
       render(:new, status: :unprocessable_entity)
     end
