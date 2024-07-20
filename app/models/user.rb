@@ -37,6 +37,8 @@ class User < ApplicationRecord
   # TODO: Uncomment the line above and remove the line below when the password regex is ready
   validates :password, length: {minimum: 1}, if: proc { |u| u.password.present? }
 
+  scope :gecoded, -> { where.not(longitude: nil, latitude: nil) }
+
   generates_token_for :password_reset, expires_in: 15.minutes do
     password_salt&.last(10)
   end

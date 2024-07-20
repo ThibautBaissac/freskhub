@@ -9,3 +9,6 @@ application.register("dialog", DialogController)
 
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
+
+import MapsController from "./maps_controller"
+application.register("maps", MapsController)
