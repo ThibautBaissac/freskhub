@@ -1,5 +1,3 @@
 <% if @geocoded_users %>
-  <div data-controller="maps" data-maps-instances="<%= @geocoded_users.to_json %>" data-maps-popup-key="email">
-    <div id="maps" data-maps-target="map" class="h-[35rem] w-auto">></div>
-  </div>
+  <%= render(MapComponent.new(geocoded_instances: @geocoded_users, popup_content: "email")) %>
 <% end %>
