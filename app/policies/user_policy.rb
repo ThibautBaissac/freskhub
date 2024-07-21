@@ -2,7 +2,7 @@
 
 class UserPolicy < ApplicationPolicy
   def show?
-    user == record || same_fresk_and_admin?
+    user == record || same_fresk_and_admin? || user.superadmin
   end
 
   alias edit? show?

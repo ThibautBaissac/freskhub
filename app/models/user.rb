@@ -14,6 +14,10 @@ class User < ApplicationRecord
     user_infos.find_by(fresk:, role: User::Info::Admin).present?
   end
 
+  def admin?
+    user_infos.any?(&:admin?)
+  end
+
   def to_param
     uuid
   end
