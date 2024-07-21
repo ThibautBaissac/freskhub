@@ -2,10 +2,6 @@ class UsersController < ApplicationController
   before_action :set_user, only: %i[show edit update]
   before_action :set_authorization, only: %i[show edit update]
 
-  def index
-    @geocoded_users = User.gecoded
-  end
-
   def show
   end
 

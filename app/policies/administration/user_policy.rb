@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class Administration::ComponentPolicy < ApplicationPolicy
+class Administration::UserPolicy < ApplicationPolicy
   def index?
     user.present? # TODO: Change this to user.admin? or superadmin?
   end
