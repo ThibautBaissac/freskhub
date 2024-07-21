@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_07_21_115207) do
+ActiveRecord::Schema[7.1].define(version: 2024_07_21_121102) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -157,6 +157,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_21_115207) do
     t.bigint "training_session_category_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.float "latitude"
+    t.float "longitude"
     t.index ["country_id"], name: "index_training_sessions_on_country_id"
     t.index ["language_id"], name: "index_training_sessions_on_language_id"
     t.index ["training_session_category_id"], name: "index_training_sessions_on_training_session_category_id"
