@@ -43,6 +43,10 @@ class User < ApplicationRecord
     password_salt&.last(10)
   end
 
+  def admin_for_fresk?(fresk)
+    user_infos.find_by(fresk:, role: User::Info::Admin).present?
+  end
+
   def to_param
     uuid
   end
