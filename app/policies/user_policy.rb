@@ -5,6 +5,9 @@ class UserPolicy < ApplicationPolicy
     user == record || same_fresk_and_admin?
   end
 
+  alias edit? show?
+  alias update? show?
+
   private
 
   def same_fresk_and_admin?

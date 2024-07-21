@@ -1,12 +1,12 @@
 class UsersController < ApplicationController
   before_action :set_user, only: %i[show edit update]
+  before_action :set_authorization, only: %i[show edit update]
 
   def index
     @geocoded_users = User.gecoded
   end
 
   def show
-    authorize(@user)
   end
 
   def edit
@@ -27,6 +27,10 @@ class UsersController < ApplicationController
 
   def set_user
     @user = User.find_by_uuid(params[:id])
+  end
+
+  def set_authorization
+    authorize(@user)
   end
 
   def user_params
