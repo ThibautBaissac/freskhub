@@ -38,6 +38,11 @@ class User < ApplicationRecord
   validates :password, length: {minimum: 1}, if: proc { |u| u.password.present? }
 
   scope :gecoded, -> { where.not(longitude: nil, latitude: nil) }
+  scope :in_same_fresk_as, lambda { |user|
+                             joins(:user_infos)
+                               .where(user_infos: {fresk_id: user.user_infos.select(:fresk_id)})
+                               .distinct
+                           }
 
   generates_token_for :password_reset, expires_in: 15.minutes do
     password_salt&.last(10)
