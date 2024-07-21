@@ -1,3 +1,3 @@
-<% if @geocoded_users %>
+<% if @geocoded_users.exists? %>
   <%= render(MapComponent.new(geocoded_instances: @geocoded_users, popup_content: "email")) %>
 <% end %>

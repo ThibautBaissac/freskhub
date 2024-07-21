@@ -12,6 +12,7 @@ class Searches::ResultsController < ApplicationController
 
     @pagy, @records = pagy(records.order(start_at: :desc))
     @decorated_records = @records.map(&:decorate)
+    @geocoded_records = @records.geocoded
     @applied_filters = Search::AppliedFiltersPresenter.new(filter_params: permitted_filter_params).call
 
     render("#{model.name.underscore.pluralize}/index")

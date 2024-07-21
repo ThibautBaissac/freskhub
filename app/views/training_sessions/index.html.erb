@@ -4,6 +4,10 @@
   <%= render("searches/active_filters") %>
   <%= render("searches/search_and_filter_accordion") %>
 
+  <% if @geocoded_records.exists? %>
+    <%= render(MapComponent.new(geocoded_instances: @geocoded_records, popup_content: "start_at")) %>
+  <% end %>
+
   <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-5">
     <% @decorated_records.each do |training_session| %>
       <%= render("training_sessions/training_session", training_session:) %>

@@ -7,6 +7,7 @@ class TrainingSessionsController < ApplicationController
                                        .order(start_at: :desc)
     @pagy, @records = pagy(training_sessions)
     @decorated_records = @records.map(&:decorate)
+    @geocoded_records = @records.geocoded
   end
 
   def show

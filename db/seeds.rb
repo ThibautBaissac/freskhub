@@ -44,7 +44,8 @@ ts = TrainingSession.create!(category: categories.sample, start_at: Time.now, en
   start_at = Time.now + rand(1..10).days
   end_at = start_at + 3.hours
   TrainingSession.create!(category: categories.sample, start_at:, end_at:,
-                          max_participants: 10, uuid: SecureRandom.uuid, language: Language.first, country: Country.first)
+                          max_participants: 10, uuid: SecureRandom.uuid, language: Language.first,
+                          country: Country.first, latitude: rand(-90.0..90.0), longitude: rand(-180.0..180.0))
 end
 
 participant = TrainingSession::Participant.create!(training_session: ts,
