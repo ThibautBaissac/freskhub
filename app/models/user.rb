@@ -1,7 +1,7 @@
 class User < ApplicationRecord
   include User::Associations
-  include User::Validations
   include User::Scopes
+  include User::Validations
 
   has_secure_password
   encrypts :email, deterministic: true, downcase: true
