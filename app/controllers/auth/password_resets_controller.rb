@@ -7,10 +7,7 @@ class Auth::PasswordResetsController < ApplicationController
 
   def create
     if (user = User.find_by(email: params[:email]&.downcase&.strip))
-      Auth::PasswordMailer.with(
-        user:, token:
-        user.generate_token_for(:password_reset)
-      ).password_reset.deliver_later
+      Auth::PasswordResetJob.perform_later(user:)
       redirect_to(new_auth_session_path, notice: t("auth.password_reset_email_sent"))
     else
       redirect_to(new_auth_password_reset_path, alert: t("auth.invalid_credentials"))
