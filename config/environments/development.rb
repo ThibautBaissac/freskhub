@@ -41,6 +41,11 @@ Rails.application.configure do
     config.cache_store = :null_store
   end
 
+  # Solid Queue is running with rails s (see plugin in puma.rb)
+  config.active_job.queue_adapter = :solid_queue
+  # silence solid_queue output in logs
+  config.solid_queue.silence_polling = true
+
   # Store uploaded files on the local file system (see config/storage.yml for options).
   config.active_storage.service = :local
 
