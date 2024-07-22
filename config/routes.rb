@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  mount MissionControl::Jobs::Engine, at: "/jobs"
+
   scope "(:locale)", locale: /#{I18n.available_locales.join('|')}/ do
     root to: "fresks#index"
     get "up" => "rails/health#show", as: :rails_health_check
