@@ -14,7 +14,7 @@ class FlashComponent < ViewComponent::Base
       secondary: "bg-gray-300",
       success: "bg-green-200",
       warning: "bg-amber-200",
-      danger: "bg-red-800"
+      danger: "bg-red-500"
     }[@type]
   end
 
@@ -24,7 +24,7 @@ class FlashComponent < ViewComponent::Base
       secondary: "text-gray-900",
       success: "text-green-800",
       warning: "text-amber-800",
-      danger: "text-red-100"
+      danger: "text-gray-100"
     }[@type]
   end
 

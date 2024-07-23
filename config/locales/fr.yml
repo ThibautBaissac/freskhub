@@ -196,8 +196,9 @@ fr:
     homepage: Revenir à la page d'accueil
     oops: Oops !
   fresk:
+    show_all_sessions: Voir toutes les sessions
     discover_fresks: Découvrez nos fresques
-    discover_sessions: Découvrir les sessions
+    upcoming_sessions: Sessions à venir
     visit_website: Visiter le site officiel
   helpers:
     select:

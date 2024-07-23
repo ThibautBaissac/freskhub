@@ -195,8 +195,9 @@ en:
     homepage: Go to homepage
     oops: Oops!
   fresk:
+    show_all_sessions: See all sessions
     discover_fresks: Discover our fresks
-    discover_sessions: Découvrir les sessions
+    upcoming_sessions: Upcomping sessions
     visit_website: Visit official website
   helpers:
     select:
