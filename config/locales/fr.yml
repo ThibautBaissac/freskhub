@@ -56,7 +56,15 @@ fr:
     password_reset: Réinitialiser votre mot de passe
     password_reset_email_sent: Un e-mail a été envoyé avec des instructions pour réinitialiser
       votre mot de passe
-    password_reset_successful: Votre mot de passe a été réinitialisé
+    password_reset_successful: Votre mot de passe a été réinitialisé, vous pouvez
+      vous connecter !
+    password_validation:
+      digit: doit contenir au moins un chiffre
+      downcase_letter: doit contenir au moins une minuscule
+      length: doit contenir au moins 12 caractères
+      special_character: doit contenir au moins un caractère spécial
+      strength: 'Votre mot de passe doit contenir au moins :'
+      uppercase_letter: doit contenir au moins une majuscule
     repeat_new_password: Répéter le nouveau mot de passe
     signed_up: Merci de vous être inscrit·e !
     update_password: Mettre à jour le mot de passe

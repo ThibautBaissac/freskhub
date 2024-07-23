@@ -9,3 +9,6 @@ application.register("dialog", DialogController)
 
 import MapsController from "./maps_controller"
 application.register("maps", MapsController)
+
+import PasswordStrengthController from "./password_strength_controller"
+application.register("password-strength", PasswordStrengthController)
