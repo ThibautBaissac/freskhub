@@ -1,5 +1,5 @@
-<% if current_user %>
+<div class="mb-5">
   <%= render(AccordionComponent.new(title: t("search.search_and_filter"))) do %>
     <%= render("searches/training_session_form") %>
   <% end %>
-<% end %>
+</div>
