@@ -1,5 +1,5 @@
 <% if @object.errors.any? %>
   <% @object.errors.full_messages.each do |message| %>
-    <%= render(AlertComponent.new(type: :danger, message:, size: :sm, closable: false)) %>
+    <%= render(FlashComponent.new(type: :danger, message:, size: :sm, closable: false)) %>
   <% end %>
 <% end %>

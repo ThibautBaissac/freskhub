@@ -42,16 +42,27 @@ en:
       training_session_role: Role
       user: User
   auth:
+    go_to_login: Go to login page
     invalid_credentials: Invalid credentials
     invalid_token: Invalid token, please try again
     logged_in: You are logged in
     logged_out: You are logged out
+    login: Log in
+    new_password: New password
+    password: Password
+    password_challenge: Current password
+    password_confirmation: Password confirmation
+    password_forgot: Forgot password?
+    password_reset: Reset your password
     password_reset_email_sent: An email has been sent with instructions to reset your
       password
     password_reset_successful: Your password has been reset
+    repeat_new_password: Repeat new password
     signed_up: Thanks for signing up!
+    update_password: Update password
   common:
     actions: Actions
+    app_name: FreskHub
     back: Back
     cancel: Cancel
     confirm: Confirm
@@ -60,8 +71,10 @@ en:
     edit: Edit
     new: New
     save: Save
+    send: Send
     show: Shiow
     update: Update
+    welcome_to: Welcome to %{app_name}
   date:
     abbr_day_names:
     - Sun

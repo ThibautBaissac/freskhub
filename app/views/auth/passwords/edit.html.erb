@@ -1,22 +1,23 @@
-<h1 class="mb-10">Update password</h1>
+<div class="w-full max-w-lg mx-auto">
+  <h2 class="mt-10 mb-5"><%= t("auth.update_password") %></h2>
 
-<%= form_with(model: current_user, url: auth_password_path) do |form| %>
-  <%= render(Form::ErrorMessagesComponent.new(object: form.object)) %>
+  <%= form_with(model: current_user, url: auth_password_path) do |form| %>
+    <%= render(Form::ErrorMessagesComponent.new(object: form.object)) %>
+    <div>
+      <%= render(Form::LabelComponent.new(form:, label: :password_challenge, value: t("auth.password_challenge"), for_input: :password_challenge)) %>
+      <%= form.password_field(:password_challenge, class: "mb-10 appearance-none border rounded-xl w-full py-4 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline") %>
+    </div>
 
-  <div class="mb-4">
-    <%= form.label(:password_challenge, "Current password", class: "block text-gray-700 text-sm font-bold mb-2", for: :password_challenge)  %>
-    <%= form.password_field(:password_challenge, class: "appearance-none border rounded-xl w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline") %>
-  </div>
-  <div class="mb-4">
-    <%= form.label(:password, "New password", class: "block text-gray-700 text-sm font-bold mb-2", for: :password)  %>
-    <%= form.password_field(:password, class: "appearance-none border rounded-xl w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline") %>
-  </div>
-  <div class="mb-4">
-    <%= form.label(:password_confirmation, class: "block text-gray-700 text-sm font-bold mb-2", for: :password_confirmation)  %>
-    <%= form.password_field(:password_confirmation, class: "appearance-none border rounded-xl w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline") %>
-  </div>
-
-  <div class="mb-4">
-    <%= form.submit("Update password", class: "bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded-xl focus:outline-none focus:shadow-outline") %>
-  </div>
-<% end %>
+    <div>
+      <%= render(Form::LabelComponent.new(form:, label: :password, value: t("auth.new_password"), for_input: :password)) %>
+      <%= form.password_field(:password, class: "mb-10 appearance-none border rounded-xl w-full py-4 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline") %>
+    </div>
+    <div>
+      <%= render(Form::LabelComponent.new(form:, label: :password_confirmation, value: t("auth.repeat_new_password"), for_input: :password_confirmation)) %>
+      <%= form.password_field(:password_confirmation, class: "mb-10 appearance-none border rounded-xl w-full py-4 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline") %>
+    </div>
+    <div>
+      <%= form.submit(t("common.update"), class: "w-full bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-3 px-4 rounded-xl focus:outline-none focus:shadow-outline hover:cursor-pointer") %>
+    </div>
+  <% end %>
+</div>

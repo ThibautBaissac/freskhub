@@ -42,16 +42,27 @@ fr:
       training_session_role: Rôle
       user: Utilisateur·ice
   auth:
+    go_to_login: Aller à la page de connexion
     invalid_credentials: Identifiants invalides
     invalid_token: Jeton invalide, veuillez réessayer
     logged_in: Vous êtes connecté·e
     logged_out: Vous êtes déconnecté·e
+    login: Connexion
+    new_password: Nouveau mot de passe
+    password: Mot de passe
+    password_challenge: Mot de passe actuel
+    password_confirmation: Confirmation du mot de passe
+    password_forgot: Mot de passe oublié ?
+    password_reset: Réinitialiser votre mot de passe
     password_reset_email_sent: Un e-mail a été envoyé avec des instructions pour réinitialiser
       votre mot de passe
     password_reset_successful: Votre mot de passe a été réinitialisé
+    repeat_new_password: Répéter le nouveau mot de passe
     signed_up: Merci de vous être inscrit·e !
+    update_password: Mettre à jour le mot de passe
   common:
     actions: Actions
+    app_name: FreskHub
     back: Retour
     cancel: Annuler
     confirm: Confirmer
@@ -60,8 +71,10 @@ fr:
     edit: Modifier
     new: Nouveau
     save: Enregistrer
+    send: Envoyer
     show: Voir
     update: Mettre à jour
+    welcome_to: Bienvenue sur %{app_name}
   date:
     abbr_day_names:
     - dim

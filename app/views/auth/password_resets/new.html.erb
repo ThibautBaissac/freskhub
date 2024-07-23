@@ -1,11 +1,22 @@
-<h1 class="mb-10"><%= t("auth.password_reset") %></h1>
+<div class="w-full max-w-lg mx-auto">
+  <h1><%= t("common.welcome_to", app_name: t("common.app_name")) %></h1>
 
-<%= form_with(model: @user, url: auth_password_reset_path) do |form| %>
-  <div class="mb-4">
-    <%= form.label(:email, class: "block text-gray-700 font-bold mb-2", for: :email) %>
-    <%= form.email_field(:email, class: "appearance-none border rounded-xl w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline") %>
+  <h2 class="mt-10 mb-5"><%= t("auth.password_reset") %></h2>
+
+  <%= form_with(model: @user, url: auth_password_reset_path) do |form| %>
+    <div>
+      <%= render(Form::LabelComponent.new(form:, label: :email, value: t("activerecord.attributes.user.email"), for_input: :emal)) %>
+      <%= form.email_field(:email, class: "mb-10 appearance-none border rounded-xl w-full py-4 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline") %>
+    </div>
+    <div>
+      <%= form.submit(t("common.send"), class: "w-full bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-3 px-4 rounded-xl focus:outline-none focus:shadow-outline hover:cursor-pointer") %>
+    </div>
+  <% end %>
+
+  <div class="mt-4">
+    <%= link_to(new_auth_session_path, class: "flex items-center") do %>
+    <%= render(Svg::ArrowComponent.new) %>
+      <%= t("auth.go_to_login") %>
+    <% end %>
   </div>
-  <div class="mb-4">
-    <%= form.submit(t("default.send"), class: "bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded-xl focus:outline-none focus:shadow-outline") %>
-  </div>
-<% end %>
+</div>
