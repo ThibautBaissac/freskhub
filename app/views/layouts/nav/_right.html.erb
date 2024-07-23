@@ -17,5 +17,10 @@
       </span>
     </div>
   <% end %>
-  <%= render("layouts/nav/user_dropdown") %>
+
+  <% if user_signed_in? %>
+    <%= render("layouts/nav/user_dropdown") %>
+  <% else %>
+      <%= link_to(t("auth.login"), new_auth_session_path, class: "flex items-center justify-center px-2 md:w-auto h-10 text-base leading-normal text-center align-middle bg-transparent border border-solid shadow-none cursor-pointer rounded-2xl hover:bg-gray-100") %>
+  <% end %>
 </div>
