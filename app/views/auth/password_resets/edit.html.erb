@@ -7,11 +7,11 @@
     <%= render(Form::ErrorMessagesComponent.new(object: form.object)) %>
 
     <div>
-      <%= render(Form::LabelComponent.new(form:, label: :password, value: t("auth.password"), for_input: :password)) %>
+      <%= render(Form::LabelComponent.new(form:, label: :password, value: t("auth.password"))) %>
       <%= form.password_field(:password, data: {password_strength_target: :password}, class: "mb-10 appearance-none border rounded-xl w-full py-4 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline") %>
     </div>
     <div>
-      <%= render(Form::LabelComponent.new(form:, label: :password_confirmation, value: t("auth.password_confirmation"), for_input: :password_confirmation)) %>
+      <%= render(Form::LabelComponent.new(form:, label: :password_confirmation, value: t("auth.password_confirmation"))) %>
       <%= form.password_field(:password_confirmation, class: "mb-10 appearance-none border rounded-xl w-full py-4 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline") %>
     </div>
     <div>

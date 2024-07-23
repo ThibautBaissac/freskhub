@@ -266,6 +266,9 @@ fr:
     no_filter_applied: Aucun filtre appliqué
     search: Rechercher
     search_and_filter: Rechercher et filtrer
+    record_count:
+      one: 1 élément trouvé
+      other: "%{count} éléments trouvés"
   support:
     array:
       last_word_connector: " et "
