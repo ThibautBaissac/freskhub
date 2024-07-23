@@ -11,6 +11,9 @@
       <%= link_to("Profile", user_path(current_user), class: "text-black p-3 block hover:bg-gray-200 rounded-2xl")  %>
       <%= link_to("Edit password", edit_auth_password_path, class: "text-black p-3 block hover:bg-gray-200 rounded-2xl")  %>
       <%= button_to("Log out", auth_session_path, method: :delete, class: "text-black p-3 block hover:bg-gray-200 rounded-2xl w-full text-left") %>
+      <% if current_user.superadmin %>
+        <%= link_to("Mission Control", mission_control_jobs_path, class: "text-black p-3 block hover:bg-gray-200 rounded-2xl")  %>
+      <% end %>
     <% else %>
       <%= link_to("Sign Up", new_auth_registration_path, class: "text-black p-3 block hover:bg-gray-200 rounded-2xl") %>
       <%= link_to("Log In", new_auth_session_path, class: "text-black p-3 block hover:bg-gray-200 rounded-2xl") %>
