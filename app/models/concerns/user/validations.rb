@@ -17,7 +17,7 @@ module User::Validations
     # (?=.*[a-z]) : at least 1 downcase letter
     # (?=.*[A-Z]) : at least 1 uppercase letter
     # (?=.*[@:,\-?*_()!#$%^&+=]) : at least 1 of these special chars
-    # validates :password, format: Constants::User::PASSWORD_REGEX, if: proc { |u| u.password.present? }
+    # validates :password, format: Constants::Regex::PASSWORD, if: proc { |u| u.password.present? }
     # TODO: Uncomment the line above and remove the line below when the password regex is ready
     validates :password, length: {minimum: 1}, if: proc { |u| u.password.present? }
   end
