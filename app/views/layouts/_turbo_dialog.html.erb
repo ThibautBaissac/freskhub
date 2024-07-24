@@ -2,7 +2,8 @@
   <dialog data-controller="dialog" data-action="click->dialog#clickOutside"
           class="backdrop:bg-gray-400 backdrop:bg-opacity-60 z-10 rounded-2xl border w-full md:w-2/3 mt-24">
     <div class="p-4">
-      <div class="flex justify-end">
+      <div class="flex justify-between items-center">
+        <h2 class="text-xl font-bold"><%= title %></h2>
         <button class="inline-flex items-center p-2 text-base leading-normal text-center align-middle bg-transparent border border-solid shadow-none cursor-pointer rounded-xl hover:bg-gray-100" data-action="dialog#close">
           <%= t("common.close") %>
           <%= render(Svg::CrossComponent.new) %>

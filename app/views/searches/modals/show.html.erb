@@ -1,4 +1,4 @@
-<%= render("layouts/turbo_dialog") do %>
+<%= render("layouts/turbo_dialog", title: t("dialog_title.search_training_sessions")) do %>
   <div data-action="turbo:submit-end->dialog#submitEnd">
     <%= render("searches/training_session_form") %>
   </div>

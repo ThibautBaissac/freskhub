@@ -51,7 +51,7 @@ fr:
     new_password: Nouveau mot de passe
     password: Mot de passe
     password_challenge: Mot de passe actuel
-    password_confirmation: Confirmation du mot de passe
+    password_confirmation: Répéter le nouveau mot de passe
     password_forgot: Mot de passe oublié ?
     password_reset: Réinitialiser votre mot de passe
     password_reset_email_sent: Un e-mail a été envoyé avec des instructions pour réinitialiser
@@ -65,7 +65,6 @@ fr:
       special_character: doit contenir au moins un caractère spécial
       strength: 'Votre mot de passe doit contenir au moins :'
       uppercase_letter: doit contenir au moins une majuscule
-    password_confirmation: Répéter le nouveau mot de passe
     signed_up: Merci de vous être inscrit·e !
     update_password: Mettre à jour le mot de passe
   common:
@@ -189,6 +188,10 @@ fr:
       month: Mois
       second: Seconde
       year: Année
+  dialog_title:
+    edit_locale: Modifier la langue de l'interface
+    edit_user_profile: Modifier mon profil
+    search_training_sessions: Rechercher des sessions
   errors:
     back: Revenir en arrière
     error_404: Nous ne parvenons pas à trouver la page que vous recherchez.
@@ -196,8 +199,8 @@ fr:
     homepage: Revenir à la page d'accueil
     oops: Oops !
   fresk:
-    show_all_sessions: Voir toutes les sessions
     discover_fresks: Découvrez nos fresques
+    show_all_sessions: Voir toutes les sessions
     upcoming_sessions: Sessions à venir
     visit_website: Visiter le site officiel
   helpers:
@@ -265,11 +268,11 @@ fr:
     user_not_authorized: Vous n'êtes pas autorisé·e à effectuer cette action.
   search:
     no_filter_applied: Aucun filtre appliqué
-    search: Rechercher
-    search_and_filter: Rechercher et filtrer
     record_count:
       one: 1 élément trouvé
       other: "%{count} éléments trouvés"
+    search: Rechercher
+    search_and_filter: Rechercher et filtrer
   support:
     array:
       last_word_connector: " et "

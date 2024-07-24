@@ -1,4 +1,4 @@
-<%= render("layouts/turbo_dialog") do %>
+<%= render("layouts/turbo_dialog", title: t("dialog_title.edit_locale")) do %>
   <div data-action="turbo:submit-end->dialog#submitEnd">
     <h2 class="mb-4">Change the interface language</h2>
     <%= form_with(url: update_user_locale_path, method: :patch, data: {turbo: "false"}) do |form| %>
