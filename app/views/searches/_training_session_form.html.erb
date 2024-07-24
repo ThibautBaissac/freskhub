@@ -1,5 +1,5 @@
 <%= form_with(url: searches_results_path(locale), method: :get, local: true, data: {turbo: "false"}, class: "space-y-4") do |form| %>
-  <%= hidden_field_tag :model, "training_session" %>
+  <%= hidden_field_tag(:model, "training_session") %>
   <div class="grid grid-cols-2 gap-4">
     <div>
       <%= render(Form::LabelComponent.new(form:, label: :language_id, value: t("activerecord.models.language"))) %>
