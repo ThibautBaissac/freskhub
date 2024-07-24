@@ -8,6 +8,7 @@ class Auth::SessionsController < ApplicationController
     # TODO: Use strong parameters
     if (user = User.authenticate_by(email: params[:email], password: params[:password]))
       login(user)
+      user.update(last_login_at: DateTime.current)
       redirect_to(root_path, notice: t("auth.logged_in"))
     else
       flash[:alert] = t("auth.invalid_credentials")
