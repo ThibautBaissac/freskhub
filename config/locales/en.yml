@@ -47,7 +47,9 @@ en:
     invalid_token: Invalid token, please try again
     logged_in: You are logged in
     logged_out: You are logged out
+    edit_password: Edit password
     login: Log in
+    logout: Log out
     new_password: New password
     password: Password
     password_challenge: Current password
@@ -286,6 +288,10 @@ en:
       short: "%I:%M%P"
     pm: pm
   training_session:
+    session:
+      zero: Session
+      one: Session
+      other: Sessions
     all_sessions: All sessions
     not_published: Not published
     published: Published
@@ -299,3 +305,5 @@ en:
       participant: Participant
       role: Role
     session_list: Sessions list
+  user:
+    profile: Profile

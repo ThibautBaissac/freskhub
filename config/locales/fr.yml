@@ -48,6 +48,8 @@ fr:
     logged_in: Vous êtes connecté·e
     logged_out: Vous êtes déconnecté·e
     login: Connexion
+    logout: Déconnexion
+    edit_password: Modifier le mot de passe
     new_password: Nouveau mot de passe
     password: Mot de passe
     password_challenge: Mot de passe actuel
@@ -287,6 +289,10 @@ fr:
       short: "%Hh%M"
     pm: pm
   training_session:
+    session:
+      zero: Session
+      one: Session
+      other: Sessions
     all_sessions: Toutes les sessions
     not_published: Non publiée
     published: Publiée
@@ -297,3 +303,5 @@ fr:
       participant: Participant·e
       role: Rôle
     session_list: Liste des sessions
+  user:
+    profile: Profil
