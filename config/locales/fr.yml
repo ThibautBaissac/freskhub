@@ -65,7 +65,7 @@ fr:
       special_character: doit contenir au moins un caractère spécial
       strength: 'Votre mot de passe doit contenir au moins :'
       uppercase_letter: doit contenir au moins une majuscule
-    repeat_new_password: Répéter le nouveau mot de passe
+    password_confirmation: Répéter le nouveau mot de passe
     signed_up: Merci de vous être inscrit·e !
     update_password: Mettre à jour le mot de passe
   common:

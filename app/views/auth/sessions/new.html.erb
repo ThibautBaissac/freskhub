@@ -4,14 +4,13 @@
   <h2 class="mt-10 mb-5"><%= t("auth.login") %></h2>
 
   <%= form_with(model: @user, url: auth_session_path) do |form| %>
-    <div>
+    <div class="mb-10">
       <%= render(Form::LabelComponent.new(form:, label: :email, value: t("activerecord.attributes.user.email"))) %>
-      <%= form.email_field(:email, class: "mb-10 appearance-none border rounded-xl w-full py-4 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline") %>
+      <%= form.email_field(:email, class: "appearance-none border rounded-xl w-full py-4 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline") %>
     </div>
-    <div>
-      <%= render(Form::LabelComponent.new(form:, label: :email, value: t("auth.password"))) %>
-      <%= form.password_field(:password, class: "mb-10 appearance-none border rounded-xl w-full py-4 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline") %>
-    </div>
+
+    <%= render(Form::PasswordVisibilityComponent.new(form:, field: :password)) %>
+
     <div>
       <%= form.submit(t("auth.login"), class: "w-full bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-3 px-4 rounded-xl focus:outline-none focus:shadow-outline hover:cursor-pointer") %>
     </div>

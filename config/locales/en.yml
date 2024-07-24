@@ -64,7 +64,7 @@ en:
       special_character: must contain at least one special character
       strength: 'For security reasons, your password must contain:'
       uppercase_letter: must contain at least one uppercase letter
-    repeat_new_password: Repeat new password
+    password_confirmation: Repeat new password
     signed_up: Thanks for signing up!
     update_password: Update password
   common:

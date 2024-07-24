@@ -12,3 +12,6 @@ application.register("maps", MapsController)
 
 import PasswordStrengthController from "./password_strength_controller"
 application.register("password-strength", PasswordStrengthController)
+
+import PasswordVisibilityController from "./password_visibility_controller"
+application.register("password-visibility", PasswordVisibilityController)

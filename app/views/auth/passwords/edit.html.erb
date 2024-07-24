@@ -4,19 +4,10 @@
   <%= form_with(model: current_user, url: auth_password_path, data: {controller: "password-strength"}) do |form| %>
     <%= render(Form::ErrorMessagesComponent.new(object: form.object)) %>
 
-    <div>
-      <%= render(Form::LabelComponent.new(form:, label: :password_challenge, value: t("auth.password_challenge"))) %>
-      <%= form.password_field(:password_challenge, class: "mb-10 appearance-none border rounded-xl w-full py-4 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline") %>
-    </div>
+    <%= render(Form::PasswordVisibilityComponent.new(form:, field: :password_challenge)) %>
+    <%= render(Form::PasswordVisibilityComponent.new(form:, field: :password, options: {data: {password_strength_target: :password}})) %>
+    <%= render(Form::PasswordVisibilityComponent.new(form:, field: :password_confirmation)) %>
 
-    <div>
-      <%= render(Form::LabelComponent.new(form:, label: :password, value: t("auth.new_password"))) %>
-      <%= form.password_field(:password, data: {password_strength_target: :password}, class: "mb-10 appearance-none border rounded-xl w-full py-4 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline") %>
-    </div>
-    <div>
-      <%= render(Form::LabelComponent.new(form:, label: :password_confirmation, value: t("auth.repeat_new_password"))) %>
-      <%= form.password_field(:password_confirmation, class: "mb-10 appearance-none border rounded-xl w-full py-4 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline") %>
-    </div>
     <div>
       <%= form.submit(t("common.update"), class: "w-full bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-3 px-4 rounded-xl focus:outline-none focus:shadow-outline hover:cursor-pointer") %>
     </div>
