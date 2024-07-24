@@ -1,1 +1,7 @@
-<%= render("profile", user: @user) %>
+<nav class="flex items-center gap-4 mb-10">
+  <%= link_to t("user.profile"), user_path(@user, tab: "profile"), data: {turbo_frame: "profile_frame"}, class: "w-full px-3 md:px-4 py-1 md:py-2 text-center rounded-full bg-indigo-600 text-white hover:bg-indigo-800" %>
+  <%= link_to t("training_session.session", count: 2), user_path(@user, tab: "sessions"), data: {turbo_frame: "sessions_frame"}, class: "w-full px-3 md:px-4 py-1 md:py-2 text-center rounded-full border text-dark hover:bg-gray-300" %>
+  <%= link_to "Participants", user_path(@user, tab: "participants"), data: {turbo_frame: "participants_frame"}, class: "w-full px-3 md:px-4 py-1 md:py-2 text-center rounded-full border text-dark hover:bg-gray-300" %>
+</nav>
+
+<%= render("users/nav/profile", user: @user) %>
