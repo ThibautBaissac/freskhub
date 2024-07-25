@@ -1,0 +1,5 @@
+<%= turbo_stream.replace("tabs") do %>
+  <%= render(TabComponent.new(tabs: @tabs, active_tab: @active_tab)) do %>
+    <%= render("searches/tabs/#{@active_tab}") %>
+  <% end %>
+<% end %>

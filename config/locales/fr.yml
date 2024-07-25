@@ -193,7 +193,7 @@ fr:
   dialog_title:
     edit_locale: Modifier la langue de l'interface
     edit_user_profile: Modifier mon profil
-    search_training_sessions: Rechercher des sessions
+    search: Rechercher
   errors:
     back: Revenir en arrière
     error_404: Nous ne parvenons pas à trouver la page que vous recherchez.

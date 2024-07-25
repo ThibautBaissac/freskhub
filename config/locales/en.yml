@@ -192,7 +192,7 @@ en:
   dialog_title:
     edit_locale: Edit the interface language
     edit_user_profile: Edit my profile
-    search_training_sessions: Search sessions
+    search: Search
   errors:
     back: Back
     error_404: We can't seem to find the page you're looking for.

@@ -1,5 +1,7 @@
-<%= render("layouts/turbo_dialog", title: t("dialog_title.search_training_sessions")) do %>
+<%= render("layouts/turbo_dialog", title: t("dialog_title.search")) do %>
   <div data-action="turbo:submit-end->dialog#submitEnd">
-    <%= render("searches/training_session_form") %>
+    <%= render(TabComponent.new(tabs: @tabs, active_tab: @active_tab)) do %>
+      <%= render("searches/tabs/training_session_form") %>
+    <% end %>
   </div>
 <% end %>
