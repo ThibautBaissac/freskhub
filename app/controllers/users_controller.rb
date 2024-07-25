@@ -3,6 +3,7 @@ class UsersController < ApplicationController
   before_action :set_authorization, only: %i[show edit update]
 
   def show
+    @active_tab = params[:tab] || "profile"
   end
 
   def edit

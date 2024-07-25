@@ -1,0 +1,4 @@
+<%= turbo_stream.update("tabs") do %>
+  <%= render("users/tabs/nav") %>
+  <%= render("users/tabs/#{@active_tab}") %>
+<% end %>

@@ -1,0 +1,5 @@
+<nav class="flex items-center gap-4 mb-10">
+  <%= link_to(t("user.profile"), user_tabs_path(@user, tab: "profile"), data: {turbo_stream: true}, class: "w-full px-3 md:px-4 py-1 md:py-2 text-center rounded-full border #{@active_tab == 'profile' ? 'bg-indigo-600 text-white hover:bg-indigo-800' : 'text-dark hover:bg-gray-300'}") %>
+  <%= link_to(t("training_session.session", count: 2), user_tabs_path(@user, tab: "sessions"), data: {turbo_stream: true}, class: "w-full px-3 md:px-4 py-1 md:py-2 text-center rounded-full border #{@active_tab == 'sessions' ? 'bg-indigo-600 text-white hover:bg-indigo-800' : 'text-dark hover:bg-gray-300'}") %>
+  <%= link_to("Participants", user_tabs_path(@user, tab: "participants"), data: {turbo_stream: true}, class: "w-full px-3 md:px-4 py-1 md:py-2 text-center rounded-full border #{@active_tab == 'participants' ? 'bg-indigo-600 text-white hover:bg-indigo-800' : 'text-dark hover:bg-gray-300'}") %>
+</nav>
