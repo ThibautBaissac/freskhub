@@ -1,0 +1,13 @@
+<div class="mb-4">
+  <% if @referer.present? && URI.parse(@referer).host == @host %>
+    <%= link_to(@referer, class: "flex items-center gap-2 text-xl") do %>
+      <%= render(Svg::ChevronComponent.new(classes: "w-6 h-6", direction: :left)) %>
+      <%= t("common.back") %>
+    <% end %>
+  <% else %>
+    <%= link_to(root_path, class: "flex items-center gap-2 text-xl") do %>
+      <%= render(Svg::ChevronComponent.new(classes: "w-6 h-6", direction: :left)) %>
+      <%= t("common.back") %>
+    <% end %>
+  <% end %>
+</div>
