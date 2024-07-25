@@ -2,11 +2,7 @@ class Users::TabsController < ApplicationController
   before_action :set_user
 
   def index
-    @active_tab = case params[:tab]
-                  when "sessions" then "sessions"
-                  when "participants" then "participants"
-                  else "profile"
-                  end
+    @tabs, @active_tab = Users::TabPresenter.new(user: @user, tab: params[:tab]).call
     respond_to do |format|
       format.turbo_stream
       format.html { render("users/show") }

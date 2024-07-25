@@ -1,4 +1,5 @@
-<%= turbo_stream.update("tabs") do %>
-  <%= render("users/tabs/nav") %>
-  <%= render("users/tabs/#{@active_tab}") %>
+<%= turbo_stream.replace("tabs") do %>
+  <%= render(TabComponent.new(tabs: @tabs, active_tab: @active_tab)) do %>
+    <%= render("users/tabs/#{@active_tab}") %>
+  <% end %>
 <% end %>

@@ -1,0 +1,10 @@
+<%= turbo_frame_tag("tabs") do %>
+  <nav class="flex items-center gap-4 mb-10">
+    <% @tabs.each do |tab| %>
+      <%= link_to(tab[:name], tab[:path], data: {turbo_stream: true}, class: tab_class(tab[:key])) %>
+    <% end %>
+  </nav>
+  <%= turbo_frame_tag("tabs") do %>
+    <%= content %>
+  <% end %>
+<% end %>

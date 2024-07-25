@@ -1,4 +1,3 @@
-<%= turbo_frame_tag("tabs") do %>
-  <%= render("users/tabs/nav") %>
+<%= render(TabComponent.new(tabs: @tabs, active_tab: @active_tab)) do %>
   <%= render("users/tabs/profile") %>
 <% end %>
