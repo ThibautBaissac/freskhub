@@ -11,6 +11,6 @@ class TrainingSessionsController < ApplicationController
   end
 
   def show
-    @training_session = TrainingSession.find_by_uuid(params[:id])
+    @training_session = TrainingSession.find_by_uuid(params[:id]).decorate
   end
 end

@@ -30,5 +30,5 @@
       <span><%= training_session.country.name %></span>
     </li>
   </ul>
-  <%= link_to(t("access_details"), training_session, class: "w-full inline-flex justify-center whitespace-nowrap rounded-lg bg-indigo-600 px-3.5 py-2.5 text-sm font-medium text-white hover:bg-indigo-800 focus-visible:outline-none focus-visible:ring focus-visible:ring-indigo-300 dark:focus-visible:ring-indigo-600 transition-colors duration-150") %>
+  <%= link_to(t("access_details"), training_session_path(training_session), data: {turbo: false}, class: "w-full inline-flex justify-center whitespace-nowrap rounded-lg bg-indigo-600 px-3.5 py-2.5 text-sm font-medium text-white hover:bg-indigo-800 focus-visible:outline-none focus-visible:ring focus-visible:ring-indigo-300 dark:focus-visible:ring-indigo-600 transition-colors duration-150") %>
 </div>
