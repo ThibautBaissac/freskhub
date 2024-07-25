@@ -42,12 +42,12 @@ en:
       training_session_role: Role
       user: User
   auth:
+    edit_password: Edit password
     go_to_login: Go to login page
     invalid_credentials: Invalid credentials
     invalid_token: Invalid token, please try again
     logged_in: You are logged in
     logged_out: You are logged out
-    edit_password: Edit password
     login: Log in
     logout: Log out
     new_password: New password
@@ -215,6 +215,18 @@ en:
   locales:
     en: English
     fr: French
+  mailer:
+    password_reset:
+      greeting: Hello,
+      ignore_request: If you didn't request a password reset, you can ignore this
+        email.
+      link_expiration: This link will expire in 15 minutes.
+      login_here: 'You can login here:'
+      request: 'You requested a password reset for your <b>FreskHub</b> account.<br>If
+        this was you, click the link below:'
+      reset_password: Reset your password
+      subject: Reset your FreskHub password
+      thank_you: Thank you,<br><b>FreskHub</b>
   number:
     currency:
       format:
@@ -288,10 +300,6 @@ en:
       short: "%I:%M%P"
     pm: pm
   training_session:
-    session:
-      zero: Session
-      one: Session
-      other: Sessions
     all_sessions: All sessions
     not_published: Not published
     published: Published
@@ -304,6 +312,10 @@ en:
       facilitator: Facilitator
       participant: Participant
       role: Role
+    session:
+      one: Session
+      other: Sessions
+      zero: Session
     session_list: Sessions list
   user:
     profile: Profile

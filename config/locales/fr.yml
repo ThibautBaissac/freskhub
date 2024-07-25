@@ -42,6 +42,7 @@ fr:
       training_session_role: Rôle
       user: Utilisateur·ice
   auth:
+    edit_password: Modifier le mot de passe
     go_to_login: Aller à la page de connexion
     invalid_credentials: Identifiants invalides
     invalid_token: Jeton invalide, veuillez réessayer
@@ -49,7 +50,6 @@ fr:
     logged_out: Vous êtes déconnecté·e
     login: Connexion
     logout: Déconnexion
-    edit_password: Modifier le mot de passe
     new_password: Nouveau mot de passe
     password: Mot de passe
     password_challenge: Mot de passe actuel
@@ -216,6 +216,19 @@ fr:
   locales:
     en: Anglais
     fr: Français
+  mailer:
+    password_reset:
+      greeting: Bonjour,
+      ignore_request: Si vous n'avez pas demandé de réinitialisation de mot de passe,
+        vous pouvez ignorer cet e-mail.
+      link_expiration: Ce lien expirera dans 15 minutes.
+      login_here: 'Vous pouvez vous connecter ici :'
+      request: 'Vous avez demandé une réinitialisation de mot de passe pour votre
+        compte <b>FreskHub</b>.<br>Si c''était vous, cliquez sur le lien ci-dessous
+        :'
+      reset_password: Réinitialisez votre mot de passe
+      subject: Réinitialisez votre mot de passe FreskHub
+      thank_you: Merci,<br><b>FreskHub</b>
   number:
     currency:
       format:
@@ -289,10 +302,6 @@ fr:
       short: "%Hh%M"
     pm: pm
   training_session:
-    session:
-      zero: Session
-      one: Session
-      other: Sessions
     all_sessions: Toutes les sessions
     not_published: Non publiée
     published: Publiée
@@ -302,6 +311,10 @@ fr:
       facilitator: Animateur·ice
       participant: Participant·e
       role: Rôle
+    session:
+      one: Session
+      other: Sessions
+      zero: Session
     session_list: Liste des sessions
   user:
     profile: Profil
