@@ -285,6 +285,7 @@ fr:
   pundit:
     user_not_authorized: Vous n'êtes pas autorisé·e à effectuer cette action.
   search:
+    term: Recherche
     no_filter_applied: Aucun filtre appliqué
     record_count:
       one: 1 élément trouvé
@@ -322,3 +323,4 @@ fr:
     session_list: Liste des sessions
   user:
     profile: Profil
+    user_list: Liste des utilisateur·ices

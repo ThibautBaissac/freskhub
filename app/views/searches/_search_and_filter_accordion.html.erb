@@ -1,3 +1,4 @@
 <div class="mb-5">
-  <%= render AccordionComponent.new(single_open: true, items: [{title: t("search.search_and_filter"), content: render("searches/tabs/#{model.to_s.underscore}_form")}]) %>
+  <% title = render(Svg::WithTextComponent.new(svg: Svg::SearchComponent.new, text: t("search.search_and_filter"))) %>
+  <%= render AccordionComponent.new(items: [{title:, content: render("searches/tabs/#{model.to_s.underscore}_form")}]) %>
 </div>

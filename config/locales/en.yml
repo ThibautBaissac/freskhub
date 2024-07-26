@@ -283,6 +283,7 @@ en:
   pundit:
     user_not_authorized: You are not authorized to perform this action.
   search:
+    term: Search term
     no_filter_applied: No filter applied
     record_count:
       one: 1 record found
@@ -323,3 +324,4 @@ en:
     session_list: Sessions list
   user:
     profile: Profile
+    user_list: Users list
