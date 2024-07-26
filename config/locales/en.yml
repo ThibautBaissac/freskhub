@@ -83,6 +83,7 @@ en:
     search: Search
     send: Send
     show: Shiow
+    toggle: Open/close
     update: Update
     welcome_to: Welcome to %{app_name}
   date:

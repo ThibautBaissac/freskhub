@@ -7,6 +7,6 @@
 
   <div class="flex justify-end space-x-4">
     <%= form.submit(t("common.search"), class: "inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-xl text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500") %>
-    <%= link_to("Reset filters", users_path, class: "px-3 md:px-4 py-1 md:py-2 bg-gray-200 text-dark rounded-xl hover:bg-gray-300") %>
+    <%= link_to(t("search.reset"), users_path, class: "px-3 md:px-4 py-1 md:py-2 bg-gray-200 text-dark rounded-xl hover:bg-gray-300") %>
   </div>
 <% end %>

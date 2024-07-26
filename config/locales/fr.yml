@@ -84,6 +84,7 @@ fr:
     search: Rechercher
     send: Envoyer
     show: Voir
+    toggle: Ouvrir/Fermer
     update: Mettre à jour
     welcome_to: Bienvenue sur %{app_name}
   date:

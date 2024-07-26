@@ -4,6 +4,9 @@
 
 import { application } from "./application"
 
+import AccordionController from "./accordion_controller"
+application.register("accordion", AccordionController)
+
 import DialogController from "./dialog_controller"
 application.register("dialog", DialogController)
 

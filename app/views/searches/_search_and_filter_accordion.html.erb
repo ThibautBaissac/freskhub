@@ -1,5 +1,3 @@
 <div class="mb-5">
-  <%= render(AccordionComponent.new(title: t("search.search_and_filter"))) do %>
-    <%= render("searches/tabs/#{model.to_s.underscore}_form") %>
-  <% end %>
+  <%= render AccordionComponent.new(single_open: true, items: [{title: t("search.search_and_filter"), content: render("searches/tabs/#{model.to_s.underscore}_form")}]) %>
 </div>
