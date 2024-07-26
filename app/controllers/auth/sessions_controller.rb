@@ -5,11 +5,11 @@ class Auth::SessionsController < ApplicationController
   end
 
   def create
-    # TODO: Use strong parameters
     if (user = User.authenticate_by(email: params[:email], password: params[:password]))
+      forwarding_url = session.delete(:forwarding_url) || root_path
       login(user)
       user.update(last_login_at: DateTime.current)
-      redirect_to(root_path, notice: t("auth.logged_in"))
+      redirect_to(forwarding_url, notice: t("auth.logged_in"))
     else
       flash[:alert] = t("auth.invalid_credentials")
       render(:new, status: :unprocessable_entity)

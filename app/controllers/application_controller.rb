@@ -10,6 +10,7 @@ class ApplicationController < ActionController::Base
   private
 
   def authenticate_user!
+    session[:forwarding_url] = request.original_url if request.get?
     redirect_to(new_auth_session_path, alert: "You must sign in or sign up first!") unless user_signed_in?
   end
 
