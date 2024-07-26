@@ -1,25 +1,20 @@
-<div class="accordion">
-  <input type="checkbox" id="accordion-toggle" class="hidden">
-  <label for="accordion-toggle" class="block p-2 text-gray-800 border cursor-pointer">
-    <h4 class="flex items-center">
-      <%= render(Svg::SearchComponent.new) %>
-      <%= @title %>
-    </h4>
-  </label>
-  <div class="accordion-content overflow-hidden transition-all duration-500 max-h-0">
-    <div class="p-4 border">
-      <%= content %>
+<div data-controller="accordion" data-accordion-single-open-value="<%= @single_open %>">
+  <% if @items.many? %>
+    <div class="flex justify-end">
+      <button data-action="click->accordion#toggleAll" class="toggle-all-btn text-gray-600">
+        <%= t("common.toggle") %>
+      </button>
     </div>
-  </div>
+  <% end %>
+
+  <% @items.each_with_index do |item, index| %>
+    <div id="accordion-item-<%= index %>" class="mb-2 border border-gray-300 rounded-2xl">
+      <button data-action="click->accordion#toggleItem" data-accordion-target="button" class="bg-gray-200 rounded-2xl cursor-pointer px-4 py-2 text-left w-full">
+        <%= item[:title] %>
+      </button>
+      <div data-accordion-target="content" class="overflow-hidden transition-all duration-300 ease-in-out">
+        <div class="p-4"><%= item[:content] %></div>
+      </div>
+    </div>
+  <% end %>
 </div>
-
-<style>
-  /* Hide the checkbox */
-  .accordion input:checked ~ .accordion-content {
-    max-height: 500px; /* Adjust as needed */
-  }
-
-  .accordion-content {
-    max-height: 0;
-  }
-</style>

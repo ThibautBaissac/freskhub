@@ -1,41 +1,10 @@
 <h2 class="font-bold">ACCORDIONS</h2>
 <div class="mb-10">
-  <style>
-    input:checked~.accordion-content {
-      max-height: 100vh;
-    }
-  </style>
-  <div class="border border mb-2 rounded-2xl">
-    <input type="radio" name="accordion" id="accordion-item-1" class="hidden" />
-    <label for="accordion-item-1" class="block bg-indigo-800 bg-indigo-800 text-gray-100 font-semibold p-4 cursor-pointer rounded-2xl">
-      Accordion Item 1
-    </label>
-    <div class="accordion-content overflow-hidden max-h-0 bg-white transition-max-height duration-200 ease-out rounded-2xl">
-      <div class="p-4">
-        <p>This is the content of the first accordion item. It is revealed when the item is clicked.</p>
-      </div>
-    </div>
-  </div>
-  <div class="border mb-2 rounded-2xl">
-    <input type="radio" name="accordion" id="accordion-item-2" class="hidden" />
-    <label for="accordion-item-2" class="block bg-red-900 text-gray-100 font-semibold p-4 cursor-pointer rounded-2xl">
-      Accordion Item 2
-    </label>
-    <div class="accordion-content overflow-hidden max-h-0 bg-white transition-max-height duration-200 ease-out rounded-2xl">
-      <div class="p-4">
-        <p>This is the content of the second accordion item. It is revealed when the item is clicked.</p>
-      </div>
-    </div>
-  </div>
-  <div class="border mb-2 rounded-2xl">
-    <input type="radio" name="accordion" id="accordion-item-3" class="hidden" />
-    <label for="accordion-item-3" class="block bg-indigo-800 text-gray-100 font-semibold p-4 cursor-pointer rounded-2xl">
-      Accordion Item 3
-    </label>
-    <div class="accordion-content overflow-hidden max-h-0 bg-white transition-max-height duration-200 ease-out rounded-2xl">
-      <div class="p-4">
-        <p>This is the content of the third accordion item. It is revealed when the item is clicked.</p>
-      </div>
-    </div>
+    <%= render AccordionComponent.new(single_open: true,
+      items: [
+        { title: "Item 1", content: "Content for item 1" },
+        { title: "Item 2", content: "Content for item 2" },
+        { title: "Item 3", content: "Content for item 3" }
+      ]) %>
   </div>
 </div>
