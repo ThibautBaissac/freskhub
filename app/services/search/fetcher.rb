@@ -11,6 +11,8 @@ module Search
       case @model.name
       when "TrainingSession"
         Search::TrainingSessionsFilter.new(filter_params: @params, includes: @includes, user: @user).call
+      when "User"
+        Search::UsersFilter.new(filter_params: @params, includes: @includes, user: @user).call
       else
         raise(ArgumentError, "Unsupported model type")
       end

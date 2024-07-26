@@ -9,6 +9,7 @@ class Search::TrainingSessionsFilter < Search::BaseFilterService
     @training_sessions = filter_by_start_at
     @training_sessions = filter_by_end_at
     @training_sessions = filter_by_role
+    @training_sessions.order(start_at: :desc)
   end
 
   private

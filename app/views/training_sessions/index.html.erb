@@ -2,7 +2,7 @@
 
 <%= turbo_frame_tag "training_sessions_list", data: {turbo_action: :advance} do %>
   <%= render("searches/active_filters") %>
-  <%= render("searches/search_and_filter_accordion") %>
+  <%= render("searches/search_and_filter_accordion", model: @model) %>
 
   <% if @geocoded_records.exists? %>
     <%= render(MapComponent.new(geocoded_instances: @geocoded_records, popup_content: "start_at")) %>

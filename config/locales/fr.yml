@@ -78,8 +78,10 @@ fr:
     create: Créer
     delete: Supprimer
     edit: Modifier
+    filter: Filtrer
     new: Nouveau
     save: Enregistrer
+    search: Rechercher
     send: Envoyer
     show: Voir
     update: Mettre à jour
@@ -286,6 +288,7 @@ fr:
     record_count:
       one: 1 élément trouvé
       other: "%{count} éléments trouvés"
+    reset: Réinitialiser les filtres
     search: Rechercher
     search_and_filter: Rechercher et filtrer
   support:

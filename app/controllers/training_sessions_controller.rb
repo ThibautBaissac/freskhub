@@ -2,9 +2,10 @@ class TrainingSessionsController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[index show]
 
   def index
-    training_sessions = TrainingSession.all
-                                       .includes(:language, :country, category: :fresk)
-                                       .order(start_at: :desc)
+    @model = TrainingSession
+    training_sessions = @model.all
+                              .includes(:language, :country, category: :fresk)
+                              .order(start_at: :desc)
     @pagy, @records = pagy(training_sessions)
     @decorated_records = @records.map(&:decorate)
     @geocoded_records = @records.geocoded

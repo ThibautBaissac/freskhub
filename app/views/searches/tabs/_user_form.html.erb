@@ -1,1 +1,12 @@
-USERS
+<%= form_with(url: searches_results_path(locale), method: :get, local: true, data: {turbo: "false"}, class: "space-y-4") do |form| %>
+  <%= hidden_field_tag(:model, "user") %>
+  <div>
+    <%= text_field_tag(:query, nil, placeholder: "Search users by firstname, lastname or email", class: "appearance-none border rounded-xl w-full py-4 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline") %>
+  </div>
+
+
+  <div class="flex justify-end space-x-4">
+    <%= form.submit(t("common.search"), class: "inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-xl text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500") %>
+    <%= link_to("Reset filters", users_path, class: "px-3 md:px-4 py-1 md:py-2 bg-gray-200 text-dark rounded-xl hover:bg-gray-300") %>
+  </div>
+<% end %>

@@ -9,6 +9,8 @@ class Search::PermittedFilterParams
     when "TrainingSession"
       @params.permit(:language_id, :country_id, :category_id, :fresk_id, :start_at, :end_at,
                      :role)
+    when "User"
+      @params.permit(:query)
     end
   end
 end

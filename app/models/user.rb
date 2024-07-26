@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  include Decorable
   include User::Associations
   include User::Scopes
   include User::Validations

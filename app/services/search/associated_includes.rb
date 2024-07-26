@@ -7,6 +7,8 @@ class Search::AssociatedIncludes
     case @model.name
     when "TrainingSession"
       [:language, :country, {category: :fresk}]
+    when "User"
+      []
     else
       []
     end

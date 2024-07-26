@@ -2,6 +2,12 @@ class UsersController < ApplicationController
   before_action :set_user, only: %i[show edit update]
   before_action :set_authorization, only: %i[show edit update]
 
+  def index
+    @model = User
+    @records = @model.all
+    @geocoded_records = @records.in_same_fresk_as(current_user).geocoded
+  end
+
   def show
     @tabs, @active_tab = Users::TabPresenter.new(user: @user, tab: params[:tab]).call
   end
