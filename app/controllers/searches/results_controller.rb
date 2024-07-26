@@ -14,11 +14,19 @@ class Searches::ResultsController < ApplicationController
     @decorated_records = @records.map(&:decorate)
     @geocoded_records = @records.geocoded
     @applied_filters = Search::AppliedFiltersPresenter.new(filter_params: permitted_filter_params).call
+    @accordion_items = accordion_items
 
     render(render_path)
   end
 
   private
+
+  def accordion_items
+    case @model.name
+    when "User"
+      Users::AccordionPresenter.new(users: @records).call
+    end
+  end
 
   def render_path
     case @model.name

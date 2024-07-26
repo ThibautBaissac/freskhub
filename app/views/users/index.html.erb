@@ -1,10 +1,12 @@
-  <%= render("searches/active_filters") %>
-  <%= render("searches/search_and_filter_accordion", model: @model) %>
+<h1 class="mb-10"><%= t("user.user_list") %></h1>
+
+<%= render("searches/active_filters") %>
+<%= render("searches/search_and_filter_accordion", model: @model) %>
 
 <% if @geocoded_records.exists? %>
   <%= render(MapComponent.new(geocoded_instances: @geocoded_records, popup_content: "email")) %>
 <% end %>
 
-<% @records.each do |user| %>
-  <%= user.email %>
-<% end %>
+<%= render("searches/record_count", records: @records) %>
+
+<%= render AccordionComponent.new(single_open: true, items: @accordion_items) %>

@@ -18,7 +18,8 @@ class Search::AppliedFiltersPresenter
       Search::CountryFilter.new,
       Search::CategoryFilter.new,
       Search::FreskFilter.new,
-      Search::RoleFilter.new
+      Search::RoleFilter.new,
+      Search::QueryFilter.new
     ]
   end
 end

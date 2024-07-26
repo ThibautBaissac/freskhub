@@ -6,6 +6,7 @@ class UsersController < ApplicationController
     @model = User
     @records = @model.all
     @geocoded_records = @records.in_same_fresk_as(current_user).geocoded
+    @accordion_items = Users::AccordionPresenter.new(users: @records).call
   end
 
   def show
