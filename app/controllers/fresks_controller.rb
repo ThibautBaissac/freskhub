@@ -10,8 +10,7 @@ class FresksController < ApplicationController
 
   def show
     @fresk = Fresk.find(params[:id]).decorate
-    @training_sessions = @fresk.training_sessions
-                               .order(start_at: :desc)
-                               .includes(:language, :country, category: :fresk)
+    @training_sessions = TrainingSessions::Select.new(user: current_user, fresk: @fresk).call
+    @training_sessions = @training_sessions.limit(10)
   end
 end

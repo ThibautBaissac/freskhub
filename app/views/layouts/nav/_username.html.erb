@@ -1,5 +1,5 @@
-<%= turbo_frame_tag "user_firstname" do %>
-  <% if current_user && current_user.firstname %>
+<%= turbo_frame_tag("user_firstname") do %>
+  <% if current_user && current_user.firstname&.present? %>
     <%= current_user.firstname %>
   <% else %>
     <%= render(Svg::UserComponent.new) %>

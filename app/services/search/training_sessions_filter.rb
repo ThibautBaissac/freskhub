@@ -1,6 +1,6 @@
 class Search::TrainingSessionsFilter < Search::BaseFilterService
   def call
-    @training_sessions = TrainingSession.all.includes(@includes)
+    @training_sessions = TrainingSessions::Select.new(user: @user).call
 
     @training_sessions = filter_by_language
     @training_sessions = filter_by_country

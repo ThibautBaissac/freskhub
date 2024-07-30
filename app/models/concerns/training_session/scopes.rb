@@ -4,6 +4,7 @@ module TrainingSession::Scopes
   included do
     scope :upcoming, -> { where("end_at > ?", Time.current) }
     scope :past, -> { where("end_at <= ?", Time.current) }
+    scope :published, -> { where(published: true) }
     scope :by_language, ->(language) { where(language:) }
     scope :by_country, ->(country) { where(country:) }
     scope :by_category, ->(category) { where(category:) }

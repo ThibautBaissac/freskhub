@@ -4,9 +4,7 @@ class TrainingSessionsController < ApplicationController
 
   def index
     @model = TrainingSession
-    training_sessions = @model.all
-                              .includes(:language, :country, category: :fresk)
-                              .order(start_at: :desc)
+    training_sessions = TrainingSessions::Select.new(user: current_user).call
     @pagy, @records = pagy(training_sessions)
     @geocoded_records = @records.geocoded
   end
