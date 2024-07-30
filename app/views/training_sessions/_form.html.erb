@@ -1,0 +1,89 @@
+<%= form_with(model: training_session, local: true) do |form| %>
+  <%= render(Form::ErrorMessagesComponent.new(object: form.object)) %>
+
+  <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-14">
+    <h3 class="col-span-1">Catégorie</h3>
+    <div class="col-span-3">
+      <%= render(Form::LabelComponent.new(form:, label: :training_session_category_id, value: t("activerecord.models.training_session_category"))) %>
+      <%= form.collection_select(:training_session_category_id, TrainingSession::Category.all, :id, :identifier, {}, {class: "border p-2 rounded-xl w-full"}) %>
+    </div>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-14">
+    <h3 class="col-span-1">Informations générales</h3>
+    <div class="col-span-3 grid grid-cols-2 gap-4">
+      <div>
+        <%= render(Form::LabelComponent.new(form:, label: :start_at, value: t("activerecord.attributes.training_session.start_at"))) %>
+        <%= form.datetime_field(:start_at, value: params[:start_at], class: "border p-2 rounded-xl w-full") %>
+      </div>
+
+      <div>
+        <%= render(Form::LabelComponent.new(form:, label: :end_at, value: t("activerecord.attributes.training_session.end_at"))) %>
+        <%= form.datetime_field(:end_at, value: params[:end_at], class: "border p-2 rounded-xl w-full") %>
+      </div>
+
+      <div>
+        <%= render(Form::LabelComponent.new(form:, label: :max_participants, value: t("activerecord.attributes.training_session.max_participants"))) %>
+        <%= form.number_field(:max_participants, class: "border p-2 rounded-xl w-full") %>
+      </div>
+
+      <div>
+        <%= render(Form::LabelComponent.new(form:, label: :connexion_url, value: t("activerecord.attributes.training_session.connexion_url"))) %>
+        <%= form.text_field(:connexion_url, class: "border p-2 rounded-xl w-full") %>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-14">
+    <h3 class="col-span-1">Lieu et langue</h3>
+    <div class="col-span-3 grid grid-cols-2 gap-4">
+      <div>
+        <%= render(Form::LabelComponent.new(form:, label: :language_id, value: t("activerecord.models.language"))) %>
+        <%= form.collection_select(:language_id, Language.all, :id, :name, {}, {class: "border p-2 rounded-xl w-full"}) %>
+      </div>
+
+      <div>
+        <%= render(Form::LabelComponent.new(form:, label: :country_id, value: t("activerecord.models.country"))) %>
+        <%= form.collection_select(:country_id, Country.all, :id, :name, {}, {class: "border p-2 rounded-xl w-full"}) %>
+      </div>
+
+      <div>
+        <%= render(Form::LabelComponent.new(form:, label: :latitude, value: t("activerecord.attributes.training_session.latitude"))) %>
+        <%= form.number_field(:latitude, class: "border p-2 rounded-xl w-full") %>
+      </div>
+
+      <div>
+        <%= render(Form::LabelComponent.new(form:, label: :longitude, value: t("activerecord.attributes.training_session.longitude"))) %>
+        <%= form.number_field(:longitude, class: "border p-2 rounded-xl w-full") %>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-14">
+    <h3 class="col-span-1">Messages</h3>
+    <div class="col-span-3 grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div>
+        <%= render(Form::LabelComponent.new(form:, label: :participants_message, value: t("activerecord.attributes.training_session.participants_message"))) %>
+        <%= form.text_area(:participants_message, class: "border p-2 rounded-xl w-full") %>
+      </div>
+
+      <div>
+        <%= render(Form::LabelComponent.new(form:, label: :facilitators_message, value: t("activerecord.attributes.training_session.facilitators_message"))) %>
+        <%= form.text_area(:facilitators_message, class: "border p-2 rounded-xl w-full") %>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-4 mb-10">
+    <div class="col-span-1"></div>
+    <div class="flex items-center gap-2">
+      <%= form.check_box(:published, class: "h-5 w-5") %>
+      <%= form.label(:published, t("activerecord.attributes.training_session.published")) %>
+    </div>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-4">
+    <div class="col-span-1"></div>
+    <%= form.submit(t("common.save"), class: "col-span-1 md:col-span-3 w-full bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-3 px-4 rounded-xl focus:outline-none focus:shadow-outline hover:cursor-pointer") %>
+  </div>
+<% end %>
