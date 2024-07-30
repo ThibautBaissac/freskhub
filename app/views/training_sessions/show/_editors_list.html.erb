@@ -1,0 +1,8 @@
+<% if policy(training_session).manage_editors? %>
+  <div>
+    <h3>Editors</h3>
+    <% training_session.editors.each do |editor| %>
+      <%= editor.user.email %>
+    <% end %>
+  </div>
+<% end %>

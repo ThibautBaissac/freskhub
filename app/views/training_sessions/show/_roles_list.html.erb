@@ -1,0 +1,8 @@
+<% if policy(training_session).manage_roles? %>
+  <div>
+    <h3>Roles</h3>
+    <% training_session.roles.each do |role| %>
+      <%= role.user.email %>
+    <% end %>
+  </div>
+<% end %>

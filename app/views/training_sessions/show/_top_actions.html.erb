@@ -1,0 +1,8 @@
+<div class="flex justify-between">
+  <%= render(BackButtonComponent.new(referer: request.referer, host: request.host)) %>
+  <% if policy(training_session).edit? %>
+    <%= link_to(edit_training_session_path(locale, training_session)) do %>
+      <%= render(Svg::EditComponent.new(stroke_width: 1.5, classes: "w-8 h-8 stroke-gray-700")) %>
+    <% end %>
+  <% end %>
+</div>
