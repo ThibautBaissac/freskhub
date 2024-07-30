@@ -13,6 +13,5 @@ class FresksController < ApplicationController
     @training_sessions = @fresk.training_sessions
                                .order(start_at: :desc)
                                .includes(:language, :country, category: :fresk)
-                               .map(&:decorate)
   end
 end

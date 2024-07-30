@@ -19,6 +19,14 @@ class User < ApplicationRecord
     user_infos.any?(&:admin?)
   end
 
+  def facilitator?
+    user_infos.any? { |user_info| user_info.facilitator == true }
+  end
+
+  def facilitator_for_fresk?(fresk)
+    user_infos.find_by(fresk:, facilitator: true).present?
+  end
+
   def to_param
     uuid
   end

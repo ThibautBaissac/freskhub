@@ -11,7 +11,6 @@ class Searches::ResultsController < ApplicationController
                                   user: current_user).call
 
     @pagy, @records = pagy(records)
-    @decorated_records = @records.map(&:decorate)
     @geocoded_records = @records.geocoded
     @applied_filters = Search::AppliedFiltersPresenter.new(filter_params: permitted_filter_params).call
     @accordion_items = accordion_items
