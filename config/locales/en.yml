@@ -29,7 +29,10 @@ en:
         lastname: Lastname
     errors:
       messages:
+        blank: can't be blank
+        greater_than_or_equal_to: must be greater than or equal to %{count}
         record_invalid: 'Validation failed: %{errors}'
+        required: is required
         restrict_dependent_destroy:
           has_many: Cannot delete record because dependent %{record} exist
           has_one: Cannot delete record because a dependent %{record} exists
@@ -283,7 +286,6 @@ en:
   pundit:
     user_not_authorized: You are not authorized to perform this action.
   search:
-    term: Search term
     no_filter_applied: No filter applied
     record_count:
       one: 1 record found
@@ -291,6 +293,7 @@ en:
     reset: Reset search
     search: Search
     search_and_filter: Search and filter
+    term: Search term
   support:
     array:
       last_word_connector: ", and "

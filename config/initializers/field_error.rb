@@ -4,7 +4,7 @@ ActionView::Base.field_error_proc = proc do |html_tag, instance_tag|
 
   html = if field
            error_message = instance_tag.error_message.join(", ")
-           field["class"] = "#{field['class']} border-red-600 border focus:outline-none"
+           field["class"] = "#{field['class']} border border-red-700 focus:outline-none"
            html = <<-HTML
               #{fragment}
               <p class="mt-1 text-sm text-red-800">#{error_message.upcase_first}</p>
